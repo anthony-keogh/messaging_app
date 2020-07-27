@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+
+{% block content %} 
+<div class="container-fluid introduction" style="background-image: url('static/img/woman-using-phone.jpg'); background-repeat: no-repeat; background-size: cover;
+background-position: 50% 50%;
+    margin-top: -20px;"  >
+    
+  <h1>Messaging App <br>for Entrepreneurs</h1>
+  <p class="intro-paragraph"> Need advice, a mentor or a way to grow your business but cant find the right person.</p>
+  <a href="{{ url_for('register') }}"><button type="button" class="btn btn-danger">Sign Up</button></a>
+  <a href="{{ url_for('getting_started') }}"><button type="button" class="btn btn-primary">How to get started</button></a>
+</div>
+{% endblock %}

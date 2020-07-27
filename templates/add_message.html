@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block header %}
+  <h1 style=" color: white;">{% block title %}Login{% endblock %}</h1>
+{% endblock %}
+
+{% block content %} 
+ 
+ 
+ <div class="container " style="height:600px;display: flex;
+    justify-content: center;
+    align-items: center;">
+<div class="col-6">
+<h1 class="login-h1" style="color:blue; padding:10px;text-shadow:2px 2px white; border-bottom: 1px solid black;">Add a Message</h1>
+<br><br>
+
+
+<form action="{{ url_for('adding_messages') }}" method="POST">
+                        <div >
+                            <label>Your Name</label>
+                            
+                            <input type="text" name="username" class="form-control" placeholder="Enter-Your-Name" required>
+                        </div>
+                        <br>
+                        <div >
+                            <label>Title of message</label>
+                            <input type="text" name="summary_Title" class="form-control" placeholder="Title_of_message" required>
+                        </div>
+                        <br>
+                        <div >
+                            <label>Write a message</label>
+                            
+                            <input type="text" name="message_Description" class="form-control" placeholder="Write a message" required>
+                        </div>
+                        <br>
+                        <button type="submit" style="background-color:blue; color:white;" class="submit-button">Post</button>
+                    </form>
+
+</div>
+</div>
+
+
+
+
+ 
+
+{% endblock %}

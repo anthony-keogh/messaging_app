@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block header %}
+  <h1 style=" color: white;">{% block title %}Messaging App{% endblock %}</h1>
+{% endblock %}
+
+{% block content %} 
+<div ng-app="myApp" ng-controller="myCtrl">
+ <div class="row mobile-row" style="margin-left:25px" >
+  <div class="column-icons black">
+    <a href="#" ng-click="myFunc()" class="white-font"><div style="width:100%" class="image-shadow"><p class="channel-font">{{channel.channel_Name}}</p></div></a>
+  </div>
+  <div class="column-icons black">
+    <a href="#" ng-click="myFunc()" class="white-font"><div style="width:100%" class="image-shadow"><p class="channel-font">{{channel.channel_Name}}</p></div></a>
+  </div>
+  <div class="column-icons black">
+    <a href="#" ng-click="myFunc()" class="white-font"><div style="width:100%" class="image-shadow"><p class="channel-font">{{channel.channel_Name}}</p></div></a>
+  </div>
+  <div class="column-icons black">
+    <a href="#" ng-click="myFunc()" class="white-font"><div style="width:100%" class="image-shadow"><p class="channel-font">{{channel.channel_Name}}</p></div></a>
+  </div>
+  <div class="column-icons black">
+    <a href="#" ng-click="myFunc()" class="white-font"><div style="width:100%" class="image-shadow"><p class="channel-font">{{channel.channel_Name}}</p></div></a>
+  </div>
+  <div class="column-icons black">
+    <a href="#" ng-click="myFunc()" class="white-font"><div style="width:100%" class="image-shadow"><p class="channel-font">{{channel.channel_Name}}</p></div></a>
+  </div>
+  <div class="column-icons black">
+    <a href="#" ng-click="myFunc()" class="white-font"><div style="width:100%" class="image-shadow"><p class="channel-font">{{channel.channel_Name}}</p></div></a>
+  </div>
+  <div class="column-icons black">
+    <a href="#" ng-click="myFunc()" class="white-font"><div style="width:100%" class="image-shadow"><p class="channel-font">{{channel.channel_Name}}</p></div></a>
+  </div>
+  
+</div>
+
+
+<div class="row" style=" display : flex;
+  align-items : center;justify-content: center;">
+  <div class="column-icons-2">
+    <a href="#">
+          <span class="glyphicon glyphicon-home"></span>
+        </a>
+  </div>
+  <div class="column-icons-2">
+    <a href="#">
+          <span class="glyphicon glyphicon-cog"></span>
+        </a>
+  </div>
+  <div class="column-icons-2">
+    <a href="{{ url_for('add_message') }}">
+          <span class="glyphicon glyphicon-envelope"></span>
+        </a>
+  </div>
+  <div class="column-icons-2">
+    <a href="{{ url_for('info') }}">
+          <span class="glyphicon glyphicon-info-sign"></span>
+        </a>
+  </div>
+  
+</div>
+
+
+
+ <div class="container messages-container">
+  
+  <h2>Channel</h2>
+  <br><br>
+  <div class="list-group">
+  <div ng-show="showMe">
+  <p class="font-blue">Channel</p>
+    {{channel.channel_Name}}
+    <br><br>
+    <p class="font-blue">Channel Description</p>
+    {{channel.channel_Description}}
+    <br><br>
+    <p class="font-blue">User who created this channel</p>
+    {{channel.username_channel}}
+</div>
+  </div>
+</div>
+<br><br>
+ 
+</div> 
+
+
+
+{% endblock %}

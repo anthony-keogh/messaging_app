@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block header %}
+  <h1 style=" color: white;">{% block title %}Messaging App{% endblock %}</h1>
+{% endblock %}
+
+{% block content %} 
+<h1 style="color:black; text-shadow:2px 2px white;">Getting Started</h1>
+
+   <div class="well text-center" style="">
+    <div class="col-md-12"></div>
+    <div class="row">
+        <div class="col-md-6">
+        <div style="height:70px;"></div>
+        <h2>How to use our messaging app</h2>
+        <div style="height:50px; "></div>
+            <p class="get-started-para"><span style="font-weight:bold;">Step 1:</span> To get started you must first signup and then login.
+            <br><br><span style="font-weight:bold;">Step 2: </span> You can then browse around the channels that cover the topic you want to talk about or you can create a channel of your own.
+            <br><br><span style="font-weight:bold;">Step 3:</span>  Once you are logged in,  you are free to send messages on anyone of the channels and the CEO's mentors will reply when they have the time.</p>
+        </div>
+        <br><br>
+        <div class="col-md-6">
+            <img src="static/img/women-computer.jpg"  style="height:600px; width:100%;" alt="ccs_logo">
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

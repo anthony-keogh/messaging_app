@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block header %}
+  <h1 style=" color: white;">{% block title %}Messaging App{% endblock %}</h1>
+{% endblock %}
+
+{% block content %} 
+ 
+ 
+ <div class="container " style="height:600px;display: flex;
+    justify-content: center;
+    align-items: center;">
+<div class="col-6">
+<h1 class="login-h1" style="color:blue; padding:10px;text-shadow:2px 2px white; border-bottom: 1px solid black;">Update a Message</h1>
+<br><br>
+
+
+<form action="{{ url_for('login') }}" method="POST">
+                        <div >
+                            <label>Your Name</label>
+                            
+                            <input type="text" name="username" class="form-control" placeholder="Enter-Your-Name" required>
+                        </div>
+                        <div >
+                            <label>Title of message</label>
+                            <input type="password" name="Summary_Title" class="form-control" placeholder="Title_of_message" required>
+                        </div>
+                        <div >
+                            <label>Write a message</label>
+                            
+                            <input type="text" name="message_Description" class="form-control" placeholder="Write a message" required>
+                        </div>
+                        <button type="submit" style="background-color:blue; color:white;">Post</button>
+                    </form>
+
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block header %}
+  <h1 style=" color: white;">{% block title %}Sign up{% endblock %}</h1>
+{% endblock %}
+
+{% block content %} 
+ 
+ 
+ <div class="container " style="height:600px;display: flex;
+    justify-content: center;
+    align-items: center;">
+<div class="col-6">
+<h1 class="login-h1" style="color:blue; padding:10px;text-shadow:2px 2px white; border-bottom: 1px solid black;">Sign Up</h1>
+<br><br>
+
+
+<form action="{{ url_for('register') }}" method="POST">
+                        <div >
+                            <label>Username</label>
+                            <input type="text" name="username" class="form-control" placeholder="Enter Your Username" required>
+                        </div>
+                        <div >
+                            <label>Email-Address</label>
+                            <input type="text" name="useremail" class="form-control" placeholder="Enter Your Email-Address" required>
+                        </div>
+                        <div >
+                            <label>Password</label>
+                            <input type="password" name="userpassword" class="form-control" placeholder="Enter Your Password" required>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary btn-block">Register Now!</button>
+                    </form>
+                    
+
+</div>
+</div>
+
+{% endblock %}

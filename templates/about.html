@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block header %}
+  <h1 style=" color: white;">{% block title %}Messaging App{% endblock %}</h1>
+{% endblock %}
+
+{% block content %} 
+<h1 style="color:black; text-shadow:2px 2px white;">About Us</h1>
+
+   <div class="about-para text-center" style=" ">
+    <div class="col-md-12"></div>
+    <div class="row" style="padding:5px;">
+        <div class="col-md-6" >
+        <div style="height:70px;"></div>
+        <h2 class="h2-logo">The Advice Box</h2>
+        <div style="height:50px;"></div>
+            <p>Founded by Denise McGuire and Jenny O'Shea from Dublin after they got an idea in college to setup their own app, which grew into a startup.
+            <br><br>They both had a problem of trying to find talent CEO's to get advice and guidance to further their career in the tech industry.
+            <br>Sarah and Maeve turned the problem into a solution and its been a huge success and are expanding their application to a global market.</p>
+        </div>
+        <div class="col-md-6">
+            <img src="static/img/team.jpeg"  style="height: 580px; width:100%; margin-bottom: 20px;" alt="ccs_logo">
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

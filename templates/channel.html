@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block header %}
+  <h1 style=" color: white;">{% block title %}Messaging App{% endblock %}</h1>
+{% endblock %}
+
+{% block content %} 
+ 
+ 
+ <div class="container " style="height:600px;display: flex;justify-content: center;align-items: center;">
+ {{channel.channel_Name}}
+    {{channel.channel_Description}}
+
+</div>
+
+{% endblock %}
