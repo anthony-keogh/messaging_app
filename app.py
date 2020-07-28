@@ -21,7 +21,7 @@ app.config["MONGO_DBNAME"] = os.environ.get('MONGO_DBNAME')
 app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 
 mongo = PyMongo(app)
-app.secret_key = 'super secret key'
+#app.secret_key = 'super secret key'
 
 
 
