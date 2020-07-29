@@ -10,10 +10,13 @@ from datetime import datetime
 from flask import session
 from werkzeug.security import check_password_hash, generate_password_hash
 
+
+app = Flask(__name__)
+
+
 if os.path.isfile('env.py'):
     import env
 
-app = Flask(__name__)
 
 #mongodb atlas connection below
 
