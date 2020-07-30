@@ -142,10 +142,11 @@ def create_channel():
     channel_Add = mongo.db.messageappmicrosoft.channel.find()  #gaining access to mongodb atlas database and able to find items inside the collection
     return render_template('create_channel.html', channel_Add=channel_Add)
 
+#channel_Add = mongo.db.messageappmicrosoft.channel.find()
 
 @app.route('/adding_channels/', methods=['GET', 'POST'])
 def adding_channels():
-    channel_add_var = mongo.db.messageappmicrosoft.channel.find()  #gaining access to mongodb atlas database and able to find items inside the collection
+    channel_add_var = mongo.db.channel  #gaining access to mongodb atlas database and able to find items inside the collection
     channel_add_var.insert_one({
      
                         'channel_Name': request.form.get('channel_Name'), #asking user to fill out this form field
