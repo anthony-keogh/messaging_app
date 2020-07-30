@@ -72,7 +72,8 @@ def messages():
 
 @app.route('/channels')
 def channels():
-    channel = mongo.db.channel.find_one()
+    
+    channel = mongo.db.find().sort( { channel: 1 } )
     return render_template('channels.html', channel=channel)
 
 @app.route('/channel')
@@ -220,6 +221,10 @@ def deleteOne(message_id):
 @app.route('/delete_all')
 def deleteAll():
    mongo.db.remove()
+
+
+
+
 
 
 
