@@ -73,7 +73,7 @@ def messages():
 @app.route('/channels')
 def channels():
     
-    channel = mongo.db.find().sort( { channel: 1 } )
+    channel = mongo.db.channel.find().sort( { channel_Name: 1 } )
     return render_template('channels.html', channel=channel)
 
 @app.route('/channel')
