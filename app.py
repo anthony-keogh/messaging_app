@@ -119,11 +119,12 @@ def login():
     
             userpassword = request.form['userpassword'] #asking user to fill out this form field
             useremail = request.form["useremail"]
+            
         
-            userprofile = mongo.db.users.find({"username": username})
-            userEmail = mongo.db.users.find({"useremail": useremail})
+            userprofile = mongo.db.users.find_one({"username": username})
+            userEmail = mongo.db.users.find_one({"useremail": useremail})
 
-            if userprofile and userEmail and mongo.db.users.find({"userpassword": userpassword}):
+            if userprofile and userEmail and mongo.db.users.find_one({"userpassword": userpassword}):
         
                 session["users"] = request.form.get("username")
                 return render_template('add_message.html', username_profile=session["users"])
