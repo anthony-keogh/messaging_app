@@ -72,12 +72,12 @@ def messages():
 
 @app.route('/channels')
 def channels():
-    channel = mongo.db.messageappmicrosoft.channel.find_one()
+    channel = mongo.db.messageappmicrosoft.channel.find()
     return render_template('channels.html', channel=channel)
 
 @app.route('/channel')
 def channel():
-    channel = mongo.db.messageappmicrosoft.channel.find_one()
+    channel = mongo.db.channel.find_one()
     return render_template('channel.html', channel=channel)
 
 
