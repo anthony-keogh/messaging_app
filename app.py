@@ -117,20 +117,18 @@ def login():
     else:
         if request.method == 'POST':
     
+            userpassword = request.form['userpassword'] #asking user to fill out this form field
+            useremail = request.form["useremail"]
         
-        userpassword = request.form['userpassword'] #asking user to fill out this form field
-        useremail = request.form["useremail"]
-        
+            userprofile = mongo.db.users.find({"username": username})
+            userEmail = mongo.db.users.find({"useremail": useremail})
 
-        userprofile = mongo.db.users.find({"username": username})
-        userEmail = mongo.db.users.find({"useremail": useremail})
+            if userprofile and userEmail and mongo.db.users.find({"userpassword": userpassword}):
         
-        if userprofile and userEmail and mongo.db.users.find({"userpassword": userpassword}):
-        
-            session["users"] = request.form.get("username")
-            return render_template('add_message.html', username_profile=session["users"])
-        else:
-            return 'sorry wrong password or email'
+                session["users"] = request.form.get("username")
+                return render_template('add_message.html', username_profile=session["users"])
+            else:
+                return 'sorry wrong password or email'
     return render_template('auth/login.html')
 
 
