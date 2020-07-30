@@ -61,13 +61,13 @@ def team():
 
 @app.route('/message')
 def message():
-    message = mongo.db.messageappmicrosoft.message.find_one()
+    message = mongo.db.message.find_one()
     return render_template('message.html', message=message)
     
 @app.route('/messages')
 def messages():
-    message = mongo.db.messageappmicrosoft.message.find_one()
-    channel = mongo.db.messageappmicrosoft.channel.find_one()
+    message = mongo.db.message.find_one()
+    channel = mongo.db.channel.find_one()
     return render_template('messages.html', message=message, channel=channel)
 
 @app.route('/channels')
@@ -99,10 +99,10 @@ def register():
         userprofile = {'username': username, 'useremail': useremail, 'userpassword': userpassword}
         
         
-        if mongo.db.messageappmicrosoft.users.find_one({"username": username, "useremail": useremail}): #checking mongodb for matching email
+        if mongo.db.users.find_one({"username": username, "useremail": useremail}): #checking mongodb for matching email
             return 'Sorry, this password has already been taken by someone else'
         else:
-            mongo.db.messageappmicrosoft.users.insert_one(userprofile)
+            mongo.db.users.insert_one(userprofile)
         session['username'] = request.form['username'] #sessions are important because of tracking a user
         return render_template('index.html', userprofile=userprofile, userpassword=userpassword)
     return render_template("auth/registration.html")
@@ -120,9 +120,9 @@ def login():
         useremail = request.form["useremail"]
         
 
-        userprofile = mongo.db.messageappmicrosoft.users.find({"username": username})
-        userEmail = mongo.db.messageappmicrosoft.users.find({"useremail": useremail})
-        if userprofile and userEmail and mongo.db.messageappmicrosoft.users.find({"userpassword": userpassword}):
+        userprofile = mongo.db.users.find({"username": username})
+        userEmail = mongo.db.users.find({"useremail": useremail})
+        if userprofile and userEmail and mongo.db.users.find({"userpassword": userpassword}):
         
             session["users"] = request.form.get("username")
             return render_template('add_message.html', username_profile=session["users"])
@@ -170,13 +170,13 @@ def adding_channels():
 
 @app.route('/add_message')
 def add_message():
-    message_Add = mongo.db.messageappmicrosoft.message.find()  #gaining access to mongodb atlas database and able to find items inside the collection
+    message_Add = mongo.db.message.find()  #gaining access to mongodb atlas database and able to find items inside the collection
     return render_template("add_message.html",  message_Add=message_Add)
 
 @app.route('/adding_message/', methods=['GET', 'POST'])
 def adding_messages():
     today = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-    message_add_var = mongo.db.messageappmicrosoft.message  #gaining access to mongodb atlas database and able to find items inside the collection
+    message_add_var = mongo.db.message  #gaining access to mongodb atlas database and able to find items inside the collection
     message_add_var.insert_one({
      
                         'message_Description': request.form.get('message_Description'), #asking user to fill out this form field
@@ -193,13 +193,13 @@ def adding_messages():
 
 @app.route('/edit_message/<message_id>')
 def editOne(message_id):
-    editMessage = mongo.db.messageappmicrosoft.find_one( {"_id": ObjectId("message")}) #gaining access to mongodb atlas database and able to find id of the collection
+    editMessage = mongo.db.find_one( {"_id": ObjectId("message")}) #gaining access to mongodb atlas database and able to find id of the collection
     return render_template('edit_message.html', editMessage=editMessage)
 
 @app.route('/update_message/<message_id>', methods=['GET', 'POST'])
 def updateOne(message_id):
    today = datetime.now().strftime("%d %B, %Y")
-   updateMessage = mongo.db.messageappmicrosoft #gaining access to mongodb atlas database and able to find items inside the collection
+   updateMessage = mongo.db #gaining access to mongodb atlas database and able to find items inside the collection
    updateMessage.update({"_id": ObjectId("message")},
        				 {
        					'message_Description': request.form.get('message_Description'), #asking user to fill out this form field
@@ -213,11 +213,11 @@ def updateOne(message_id):
 # ----------------- Remove message Data ------------------ #
 @app.route('/delete_message/<message_id>')
 def deleteOne(message_id):
-   mongo.db.messageappmicrosoft.remove({"_id": ObjectId("message")})  #gaining access to mongodb atlas database and able to find id of the collection
+   mongo.db.remove({"_id": ObjectId("message")})  #gaining access to mongodb atlas database and able to find id of the collection
 
 @app.route('/delete_all')
 def deleteAll():
-   mongo.db.messageappmicrosoft.remove()
+   mongo.db.remove()
 
 
 
