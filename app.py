@@ -121,10 +121,10 @@ def login():
             useremail = request.form["useremail"]
             
         
-            #userprofile = mongo.db.users.find_one({"username": username})
+            userprofile = mongo.db.users.find_one({"username": username})
             userEmail = mongo.db.users.find_one({"useremail": useremail})
 
-            if userEmail and mongo.db.users.find_one({"userpassword": userpassword}):
+            if userprofile and userEmail and mongo.db.users.find_one({"userpassword": userpassword}):
         
                 session["users"] = request.form.get("username")
                 return render_template('add_message.html', username_profile=session["users"])
