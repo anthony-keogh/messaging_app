@@ -139,7 +139,7 @@ def login():
 
 @app.route('/create_channel')
 def create_channel():
-    channel_Add = mongo.db.messageappmicrosoft.channel.find()  #gaining access to mongodb atlas database and able to find items inside the collection
+    channel_Add = mongo.db.channel.find()  #gaining access to mongodb atlas database and able to find items inside the collection
     return render_template('create_channel.html', channel_Add=channel_Add)
 
 #channel_Add = mongo.db.messageappmicrosoft.channel.find()
