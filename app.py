@@ -146,7 +146,7 @@ def create_channel():
 @app.route('/adding_channels/', methods=['GET', 'POST'])
 def adding_channels():
     channel_add_var = channel = mongo.db.messageappmicrosoft.channel.find()  #gaining access to mongodb atlas database and able to find items inside the collection
-    channel_add_var.insert_one({
+    channel_add_var.insertOne({
      
                         'channel_Name': request.form.get('channel_Name'), #asking user to fill out this form field
                         'channel_Description': request.form.get('channel_Description'),
