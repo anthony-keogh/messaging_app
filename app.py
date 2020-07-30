@@ -107,7 +107,7 @@ def register():
         return render_template('index.html', userprofile=userprofile, userpassword=userpassword)
     return render_template("auth/registration.html")
 
-@app.route('/login', methods=["GET", "POST"])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     username = session.get('username')
     if username:
