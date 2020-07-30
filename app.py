@@ -114,7 +114,9 @@ def login():
         users = mongo.db.users.find()
         return render_template('index.html', users=users)
 
-    if request.method == 'POST':
+    else:
+        if request.method == 'POST':
+    
         
         userpassword = request.form['userpassword'] #asking user to fill out this form field
         useremail = request.form["useremail"]
@@ -122,6 +124,7 @@ def login():
 
         userprofile = mongo.db.users.find({"username": username})
         userEmail = mongo.db.users.find({"useremail": useremail})
+        
         if userprofile and userEmail and mongo.db.users.find({"userpassword": userpassword}):
         
             session["users"] = request.form.get("username")
