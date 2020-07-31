@@ -6,7 +6,7 @@ from wtforms.validators import (DataRequired, Email,EqualTo,Length,URL)
 from wtforms import Form, BooleanField, StringField, PasswordField, validators
 import os
 from datetime import datetime
-
+import json
 from flask import session
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -28,8 +28,12 @@ mongo = PyMongo(app)
 #app.secret_key = 'super secret key'
 
 
+#with open('static/data/channel.json') as f:
+   #  data = json.load(f)
 
-
+    #print(data)
+    
+    
 
 # ----------------- Routes to Pages ------------------ #
 @app.route('/')
@@ -67,14 +71,28 @@ def message():
 @app.route('/messages')
 def messages():
     message = mongo.db.message.find_one()
+    channel2 = mongo.db.channel.find_one({"_id": ObjectId("5f247057d2680fd7fae3e5b0")})
+    channel3 = mongo.db.channel.find_one({"_id": ObjectId("5f2471da90faff9917318431")})
+    channel4 = mongo.db.channel.find_one({"_id": ObjectId("5f2472a2b770b568efa24e5d")})
+    channel5 = mongo.db.channel.find_one({"_id": ObjectId("5f24734db770b568efa24e5e")})
+    channel6 = mongo.db.channel.find_one({"_id": ObjectId("5f247458b770b568efa24e5f")})
+    channel7 = mongo.db.channel.find_one({"_id": ObjectId("5f2474c5b770b568efa24e60")})
+    channel8 = mongo.db.channel.find_one({"_id": ObjectId("5f2475d2b770b568efa24e61")})
     channel = mongo.db.channel.find_one()
-    return render_template('messages.html', message=message, channel=channel)
+    return render_template('messages.html', message=message, channel=channel,channel2=channel2, channel3=channel3, channel4=channel4, channel5=channel5, channel6=channel6, channel7=channel7, channel8=channel8)
 
-@app.route('/channels')
+@app.route('/channels/')
 def channels():
-    
-    channel = mongo.db.channel.find().sort( { channel_Name: 1 } )
-    return render_template('channels.html', channel=channel)
+    channel = mongo.db.channel.find_one()
+    channel2 = mongo.db.channel.find_one({"_id": ObjectId("5f247057d2680fd7fae3e5b0")})
+    channel3 = mongo.db.channel.find_one({"_id": ObjectId("5f2471da90faff9917318431")})
+    channel4 = mongo.db.channel.find_one({"_id": ObjectId("5f2472a2b770b568efa24e5d")})
+    channel5 = mongo.db.channel.find_one({"_id": ObjectId("5f24734db770b568efa24e5e")})
+    channel6 = mongo.db.channel.find_one({"_id": ObjectId("5f247458b770b568efa24e5f")})
+    channel7 = mongo.db.channel.find_one({"_id": ObjectId("5f2474c5b770b568efa24e60")})
+    channel8 = mongo.db.channel.find_one({"_id": ObjectId("5f2475d2b770b568efa24e61")})
+    #channel = data.find({}, {"channel_Name": 1, _id:0}).sort({"channel_Name": -1})
+    return render_template('channels.html', channel=channel, channel2=channel2, channel3=channel3, channel4=channel4, channel5=channel5, channel6=channel6, channel7=channel7, channel8=channel8)
 
 @app.route('/channel')
 def channel():

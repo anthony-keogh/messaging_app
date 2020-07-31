@@ -1,0 +1,26 @@
+[
+    {
+      "_id": {
+        "$oid": "5f22a902c50e1d8b07470b35"
+      },
+      "channel_Name": "women in tech",
+      "channel_Description": "a very good channel",
+      "username_channel": "anthony"
+    },
+    {
+      "_id": {
+        "$oid": "5f22aa3f48f7b30710c2aa17"
+      },
+      "channel_Name": "mee",
+      "channel_Description": "anlnlnl",
+      "username_channel": "anthonyj"
+    },
+    {
+      "_id": {
+        "$oid": "5f22ae361d9f6f8409b0055c"
+      },
+      "channel_Name": "dnmd",
+      "channel_Description": "lnlnndjv",
+      "username_channel": "dhjjkd"
+    }
+  ]

@@ -1,0 +1,26 @@
+##########   ObjectID  PyMongo   ##############
+
+class flask_pymongo.BSONObjectIdConverter(map)
+A simple converter for the RESTful URL routing system of Flask.
+
+@app.route("/<ObjectId:task_id>")
+def show_task(task_id):
+    task = mongo.db.tasks.find_one_or_404(task_id)
+    return render_template("task.html", task=task)
+Valid object ID strings are converted into ObjectId objects; invalid strings result in a 404 error. The converter is automatically registered by the initialization of PyMongo with keyword ObjectId.
+
+
+
+
+
+
+###########  ObjectID Definition #################
+
+
+An ObjectId is a 12-byte unique identifier consisting of:
+
+a 4-byte value representing the seconds since the Unix epoch,
+a 5-byte random value,
+a 3-byte counter, starting with a random value.
+By default, ObjectId() creates a new unique identifier. The optional parameter oid can be an ObjectId, or any 12 bytes or, in Python 2, any 12-character str.
+
