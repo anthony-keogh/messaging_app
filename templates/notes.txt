@@ -6,3 +6,33 @@
     <a href="{{ url_for('channel') }}" class="list-group-item ">6th {{channel.channel_Name}}</a>
     <a href="{{ url_for('channel') }}" class="list-group-item ">7th {{channel.channel_Name}}</a>
     <a href="{{ url_for('channel') }}" class="list-group-item ">8th {{channel.channel_Name}}</a>
+
+
+
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+ <div class="row mobile-row" style="margin-left:25px" >
+  <div class="column-icons black">
+    <a href="#" ng-click="myFunc()" class="white-font"><div style="width:100%" class="image-shadow"><p class="channel-font">{{channel.channel_Name}}</p></div></a>
+  </div>
+  
+  
+</div>
+
+
+<div class="row mobile-row" style="margin-left:25px" >
+  <div class="column-icons black">
+    <a href="#" ng-click="myFunc()" class="white-font"><div style="width:100%" class="image-shadow"><p class="channel-font">{{channel_Name:1}}</p></div></a>
+  </div>
+ 
+  
+</div>
+
+
+<a href="{{ url_for('message') }}" class="list-group-item "><p style="color:red;">Date/Time</p> <p><span>{{message.date_added}}</span></p><span style="width:50px;"></span><p style="color:red;">Username</p> <p><span>{{message.username}}</span></p><span style="width:50px;"></span><p style="color:red;">Description</p> <p><span>{{message.message_Description}}</span></p></a>
+    <a href="{{ url_for('message') }}" class="list-group-item "><p style="color:red;">Date/Time</p> <p><span>{{message.date_added}}</span></p><span style="width:50px;"></span><p style="color:red;">Username</p> <p><span>{{message.username}}</span></p><span style="width:50px;"></span><p style="color:red;">Description</p> <p><span>{{message.message_Description}}</span></p></a>
+    <a href="{{ url_for('message') }}" class="list-group-item "><p style="color:red;">Date/Time</p> <p><span>{{message.date_added}}</span></p><span style="width:50px;"></span><p style="color:red;">Username</p> <p><span>{{message.username}}</span></p><span style="width:50px;"></span><p style="color:red;">Description</p> <p><span>{{message.message_Description}}</span></p></a>
+    <a href="{{ url_for('message') }}" class="list-group-item "><p style="color:red;">Date/Time</p> <p><span>{{message.date_added}}</span></p><span style="width:50px;"></span><p style="color:red;">Username</p> <p><span>{{message.username}}</span></p><span style="width:50px;"></span><p style="color:red;">Description</p> <p><span>{{message.message_Description}}</span></p></a>
+    <a href="{{ url_for('message') }}" class="list-group-item "><p style="color:red;">Date/Time</p> <p><span>{{message.date_added}}</span></p><span style="width:50px;"></span><p style="color:red;">Username</p> <p><span>{{message.username}}</span></p><span style="width:50px;"></span><p style="color:red;">Description</p> <p><span>{{message.message_Description}}</span></p></a>
+    <a href="{{ url_for('message') }}" class="list-group-item "><p style="color:red;">Date/Time</p> <p><span>{{message.date_added}}</span></p><span style="width:50px;"></span><p style="color:red;">Username</p> <p><span>{{message.username}}</span></p><span style="width:50px;"></span><p style="color:red;">Description</p> <p><span>{{message.message_Description}}</span></p></a>
+    <a href="{{ url_for('message') }}" class="list-group-item "><p style="color:red;">Date/Time</p> <p><span>{{message.date_added}}</span></p><span style="width:50px;"></span><p style="color:red;">Username</p> <p><span>{{message.username}}</span></p><span style="width:50px;"></span><p style="color:red;">Description</p> <p><span>{{message.message_Description}}</span></p></a>
