@@ -6,11 +6,33 @@
 
 {% block content %} 
 <div ng-app="myApp" ng-controller="myCtrl">
- <div class="row mobile-row" style="margin-left:9%;" >
-  <div class="">
-    <a href="#" ng-click="myFunc()" class=""><div style="width:100%" class="image-shadow"><p class="">{{channel_Name}}</p></div></a>
+ <div class="row mobile-row" style="margin-left:25px" >
+  <div class="column-icons black">
+    <a href="#" ng-click="myFunc()" class="white-font"><div style="width:100%" class="image-shadow"><p class="channel-font">{{channel_Name[1]}}</p></div></a>
   </div>
- 
+  <div class="column-icons black">
+    <a href="#" ng-click="myFunc()" class="white-font"><div style="width:100%" class="image-shadow"><p class="channel-font">{{channel_Name[2]}}</p></div></a>
+  </div>
+  <div class="column-icons black">
+    <a href="#" ng-click="myFunc()" class="white-font"><div style="width:100%" class="image-shadow"><p class="channel-font">{{channel_Name[3]}}</p></div></a>
+  </div>
+<div class="column-icons black">
+    <a href="#" ng-click="myFunc()" class="white-font"><div style="width:100%" class="image-shadow"><p class="channel-font">{{channel_Name[4]}}</p></div></a>
+  </div>
+  <div class="column-icons black">
+    <a href="#" ng-click="myFunc()" class="white-font"><div style="width:100%" class="image-shadow"><p class="channel-font">{{channel_Name[5]}}</p></div></a>
+  </div>
+  <div class="column-icons black">
+    <a href="#" ng-click="myFunc()" class="white-font"><div style="width:100%" class="image-shadow"><p class="channel-font">{{channel_Name[6]}}</p></div></a>
+  </div>
+<div class="column-icons black">
+    <a href="#" ng-click="myFunc()" class="white-font"><div style="width:100%" class="image-shadow"><p class="channel-font">{{channel_Name[7]}}</p></div></a>
+  </div>
+  <div class="column-icons black">
+    <a href="#" ng-click="myFunc()" class="white-font"><div style="width:100%" class="image-shadow"><p class="channel-font">{{channel_Name[8]}}</p></div></a>
+  </div>
+  
+
   
 </div>
 
@@ -50,14 +72,14 @@
   <div ng-show="showMe">
   <p class="font-blue">Channel</p>
   
-    {{channel_Name}}
+    {{channel_Name[1]}}
     
     <br><br>
     <p class="font-blue">Channel Description</p>
-    {{channel_Description}}
+    {{channel_Description[1]}}
     <br><br>
     <p class="font-blue">User who created this channel</p>
-    {{username_channel}}
+    {{username_channel[1]}}
   
 </div>
   </div>

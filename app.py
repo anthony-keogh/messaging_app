@@ -7,6 +7,7 @@ from wtforms import Form, BooleanField, StringField, PasswordField, validators
 import os
 from datetime import datetime
 import json
+import numpy as np
 from flask import jsonify
 from flask import session
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -29,10 +30,7 @@ mongo = PyMongo(app)
 #app.secret_key = 'super secret key'
 
 
-#with open('static/data/channel.json') as f:
-   #  data = json.load(f)
 
-    #print(data)
     
     
 
@@ -71,32 +69,30 @@ def message():
     
 
 
-
+#----------- channels ------------------#
 
 @app.route('/channels/', methods=['GET'])
 def channels():
   all_channel = mongo.db.channel                                                                                       #find channel
   
-  channel_Name= []
+  channel_Name = []
   channel_Description = [] 
-  username_channel = []  
-               
-                                                                                                        #make array
+  username_channel = [] 
+                                                                                                                #make array
   for s in all_channel.find({}):                                                                                    #find everything about this channel
-    channel_Name.append({ s['channel_Name']}) 
-                                 #make array of channel names in channel
-
+    channel_Name.append({ s['channel_Name']})
+ 
   for s in all_channel.find({}):                                                                                         #find everything about this channel
     channel_Description.append({ s['channel_Description']}) 
 
   for s in all_channel.find({}):                                                                                         #find everything about this channel
     username_channel.append({ s['username_channel']}) 
 
-  
-  
   return render_template('channels.html' , channel_Name=channel_Name,   channel_Description=channel_Description, username_channel=username_channel)  
-  #return jsonify({'result' : output})
   
+  
+#----------- messages ------------------#
+
 @app.route('/messages', methods=['GET'])
 def messages():
   all_message = mongo.db.message                                                                                       #find channel
@@ -113,7 +109,7 @@ def messages():
                                                                                                         #make array
   for s in all_message.find({}):                                                                                    #find everything about this channel
     message_Description.append({ s['message_Description']}) 
-                                 #make array of channel names in channel
+                                
 
   for s in all_message.find({}):                                                                                         #find everything about this channel
     summary.append({ s['summary']}) 
@@ -124,30 +120,10 @@ def messages():
   for s in all_message.find({}):                                                                                         #find everything about this channel
     date_added.append({ s['date_added']}) 
 
-  
-  
   return render_template('messages.html' ,channel_Name=channel_Name, message_Description=message_Description, summary=summary, username=username, date_added=date_added )  
   #return jsonify({'result' : output})
 
-#@app.route('/messages')
-#def messages():
-   # message = mongo.db.message.find_one()
-    
-   # channel = mongo.db.channel.find_one()
-    #return render_template('messages.html', message=message, channel=channel,channel2=channel2, channel3=channel3, channel4=channel4, channel5=channel5, channel6=channel6, channel7=channel7, channel8=channel8)
 
-#@app.route('/channels/')
-#def channels():
- #   channel = mongo.db.channel.find_one()
- #   channel2 = mongo.db.channel.find_one({"_id": ObjectId("5f247057d2680fd7fae3e5b0")})
- #   channel3 = mongo.db.channel.find_one({"_id": ObjectId("5f2471da90faff9917318431")})
- #   channel4 = mongo.db.channel.find_one({"_id": ObjectId("5f2472a2b770b568efa24e5d")})
- #   channel5 = mongo.db.channel.find_one({"_id": ObjectId("5f24734db770b568efa24e5e")})
-  #  channel6 = mongo.db.channel.find_one({"_id": ObjectId("5f247458b770b568efa24e5f")})
- #   channel7 = mongo.db.channel.find_one({"_id": ObjectId("5f2474c5b770b568efa24e60")})
- #   channel8 = mongo.db.channel.find_one({"_id": ObjectId("5f2475d2b770b568efa24e61")})
-    #channel = data.find({}, {"channel_Name": 1, _id:0}).sort({"channel_Name": -1})
- #   return render_template('channels.html', channel=channel, channel2=channel2, channel3=channel3, channel4=channel4, channel5=channel5, channel6=channel6, channel7=channel7, channel8=channel8)
 
 @app.route('/channel')
 def channel():
