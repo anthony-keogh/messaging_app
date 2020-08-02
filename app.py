@@ -7,7 +7,7 @@ from wtforms import Form, BooleanField, StringField, PasswordField, validators
 import os
 from datetime import datetime
 import json
-import numpy as np
+
 from flask import jsonify
 from flask import session
 from werkzeug.security import check_password_hash, generate_password_hash
