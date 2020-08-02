@@ -3,6 +3,13 @@ a:hover {
     text-decoration: none;
 }
 
+a.white-text:hover {
+    color:black;
+    font-weight: bold;
+    
+}
+
+
 .navbar-brand{
     color:black!important;
     font-size: 40px;
@@ -13,6 +20,19 @@ a:hover {
 h2.h2-logo{
     font-family: 'Dancing Script', cursive;
     font-size: 40px;
+}
+
+btn-info {
+    color: #fff;
+    background: linear-gradient(90deg, rgba(2,2,158,1) 34%, rgba(45,46,252,1) 77%, rgba(97,98,252,1) 100%)!important;
+    border-color: rgba(255,255,255,.15);
+}
+a.white-text{
+    color:black;
+    
+}
+p.white-text{
+    color:white;
 }
 .black:hover {
     background: black!important;
@@ -54,7 +74,7 @@ div.bck-color{
 }
 footer{
     background: rgb(2,2,158);
-    background: linear-gradient(90deg, rgba(2,2,158,1) 34%, rgba(45,46,252,1) 77%, rgba(97,98,252,1) 100%);; 
+    background: linear-gradient(90deg, rgba(2,2,158,1) 34%, rgba(45,46,252,1) 77%, rgba(97,98,252,1) 100%); 
 }
 div.bck-color{
     background-color:white;

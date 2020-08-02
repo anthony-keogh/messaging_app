@@ -222,22 +222,38 @@ def adding_channels():
 
 @app.route('/add_message')
 def add_message():
-    message_Add = mongo.db.message.find()  #gaining access to mongodb atlas database and able to find items inside the collection
-    return render_template("add_message.html",  message_Add=message_Add)
+    message_Add = mongo.db.message.find()
+    channel_Name= mongo.db.channel.find()
+    all_channel = mongo.db.channel                                                                                       #find channel
+  
+    channel_Name= []
+
+    for s in all_channel.find({}):                                                                                    #find everything about this channel
+      channel_Name.append({ s['channel_Name']})  
+
+      #gaining access to mongodb atlas database and able to find items inside the collection
+    return render_template("add_message.html",  message_Add=message_Add, channel_Name=channel_Name)
 
 @app.route('/adding_message/', methods=['GET', 'POST'])
 def adding_messages():
     today = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-    message_add_var = mongo.db.message  #gaining access to mongodb atlas database and able to find items inside the collection
-    message_add_var.insert_one({
+    message_add_var = mongo.db.message
+    all_channel = mongo.db.channel                                                                                       #find channel
+    
+    both_message_channel = all_channel and message_add_var
+    
+      #gaining access to mongodb atlas database and able to find items inside the collection
+    both_message_channel.insert_one({
      
                         'message_Description': request.form.get('message_Description'), #asking user to fill out this form field
                         'summary': request.form.get('summary'),
                         'username': request.form.get('username'),
                         "date_added": today,
+                        'channel_Name': request.form.get('channel_Name')
                         
                         
    })
+   
     
     return redirect(url_for('messages'))
 
