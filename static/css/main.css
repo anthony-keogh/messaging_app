@@ -9,6 +9,10 @@ a.white-text:hover {
     
 }
 
+section.scrolling-menu {
+    overflow: auto;
+    white-space: nowrap;
+}
 
 .navbar-brand{
     color:black!important;
