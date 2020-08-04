@@ -14,6 +14,12 @@ section.scrolling-menu {
     white-space: nowrap;
 }
 
+a.white-link{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
 .navbar-brand{
     color:black!important;
     font-size: 40px;

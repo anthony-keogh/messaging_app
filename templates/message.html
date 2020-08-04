@@ -7,14 +7,26 @@
 {% block content %} 
  
  
- <div class="container " style="height:600px;display: block;justify-content: center;align-items: center;">
-<p style="color:red;">Date/Time</p> <p><span>{{message.date_added}}</span></p>
+ 
+ <div class="row">
+        <div class="col-md-4">
+            
+        </div>
+        <div class="col-md-4">
+           <p style="color:red;">Date/Time <br><span style="color:black">{{message.date_added}}</span></p>
 <br><br>
-<p style="color:red;">Username</p> <p><span>{{message.username}}</span></p>
+<p style="color:red;">Username<br> <p><span style="color:black">{{message.username}}</span></p>
 <br><br>
-<p style="color:red;">Description</p> <p><span>{{message.message_Description}}<span></p>
+<p style="color:red;">Description<br> <span style="color:black">{{message.message_Description}}<span></p>
 
-</div>
+        </div>
+        <div class="col-md-4">
+           
+        </div>
+    </div>
+ 
+
+
 
 
 {% endblock %}

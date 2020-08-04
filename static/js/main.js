@@ -5,3 +5,11 @@ app.controller('myCtrl', function($scope) {
         $scope.showMe = !$scope.showMe;
     }
 });
+
+
+
+var app = angular.module('myApp').config(function($interpolateProvider) {
+    $interpolateProvider.startSymbol('{$');
+    $interpolateProvider.endSymbol('$}');
+});
+

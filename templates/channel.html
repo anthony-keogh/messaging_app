@@ -6,11 +6,22 @@
 
 {% block content %} 
  
+ <div class="row">
+        <div class="col-md-4">
+            
+        </div>
+        <div class="col-md-4">
+          <p style="color:red">Channel Name<br> <span style="color:black">{{channel.channel_Name}}</span></p>
+         <br>
+          <p style="color:red">Channel Description<br><span style="color:black">{{channel.channel_Description}}</span></p>
+          <br>
+           <p style="color:red">Username<br><span style="color:black">{{channel.username_channel}}</span></p>
+        </div>
+        <div class="col-md-4">
+          
+        </div>
+    </div>
  
- <div class="container " style="height:600px;display: flex;justify-content: center;align-items: center;">
- {{channel.channel_Name}}
-    {{channel.channel_Description}}
-
 </div>
 
 {% endblock %}

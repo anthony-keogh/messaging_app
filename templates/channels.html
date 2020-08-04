@@ -6,34 +6,6 @@
 
 {% block content %} 
 <div ng-app="myApp" ng-controller="myCtrl">
- <div  style=" height:100px; " >
-  <div style="height:25px;"></div>
-  <section class="section center scrolling-menu">
-  <p style="margin-left:25px;" class="white-text"><a href="#" ng-click="myFunc()" class="white-text btn btn-info btn-md">{{channel_Name[1]}}</a>
-                        <a href="#" ng-click="myFunc()" class="white-text btn btn-info btn-md">{{channel_Name[2]}}</a>
-                        <a href="#" ng-click="myFunc()" class="white-text btn btn-info btn-md">{{channel_Name[3]}}</a>
-                        <a href="#" ng-click="myFunc()" class="white-text btn btn-info btn-md">{{channel_Name[4]}}</a>
-                        <a href="#" ng-click="myFunc()" class="white-text btn btn-info btn-md">{{channel_Name[5]}}</a>
-                        <a href="#" ng-click="myFunc()" class="white-text btn btn-info btn-md">{{channel_Name[6]}}</a>
-                        <a href="#" ng-click="myFunc()" class="white-text btn btn-info btn-md">{{channel_Name[7]}}</a>
-                        <a href="#" ng-click="myFunc()" class="white-text btn btn-info btn-md">{{channel_Name[8]}}</a>
-                        <a href="#" ng-click="myFunc()" class="white-text btn btn-info btn-md">{{channel_Name[9]}}</a>
-                        <a href="#" ng-click="myFunc()" class="white-text btn btn-info btn-md">{{channel_Name[10]}}</a>
-                        <a href="#" ng-click="myFunc()" class="white-text btn btn-info btn-md">{{channel_Name[11]}}</a>
-                        <a href="#" ng-click="myFunc()" class="white-text btn btn-info btn-md">{{channel_Name[12]}}</a>
-                        <a href="#" ng-click="myFunc()" class="white-text btn btn-info btn-md">{{channel_Name[13]}}</a>
-                        <a href="#" ng-click="myFunc()" class="white-text btn btn-info btn-md">{{channel_Name[14]}}</a>
-                        <a href="#" ng-click="myFunc()" class="white-text btn btn-info btn-md">{{channel_Name[15]}}</a>
-                        <a href="#" ng-click="myFunc()" class="white-text btn btn-info btn-md">{{channel_Name[16]}}</a>
-                        <a href="#" ng-click="myFunc()" class="white-text btn btn-info btn-md">{{channel_Name[17]}}</a>
-                        <a href="#" ng-click="myFunc()" class="white-text btn btn-info btn-md">{{channel_Name[18]}}</a>
-                        <a href="#" ng-click="myFunc()" class="white-text btn btn-info btn-md">{{channel_Name[19]}}</a>
-  </p>
-  </section>
- </div> 
-  
-
-
 <div class="row" style=" display : flex;
   align-items : center;justify-content: center;">
   <div class="column-icons-2">
@@ -61,27 +33,38 @@
 
 
 
- <div class="container messages-container">
+ <div style="background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);" >
+  <div style="height:25px;"></div>
+  <section class="section center ">
+  <p style="margin-left:25px;" class="white-text">
+                        <a href="{{ url_for('channel', channel_id=1) }}" class="white-link">{{channel_Name[1]}}</a><br>
+                        <a href="{{ url_for('channel', channel_id=2) }}" class="white-link">{{channel_Name[2]}}</a><br>
+                        <a href="{{ url_for('channel', channel_id=3) }}" class="white-link">{{channel_Name[3]}}</a><br>
+                        <a href="{{ url_for('channel', channel_id=4) }}" class="white-link">{{channel_Name[4]}}</a><br>
+                        <a href="{{ url_for('channel', channel_id=5) }}" class="white-link">{{channel_Name[5]}}</a><br>
+                        <a href="{{ url_for('channel', channel_id=6) }}" class="white-link">{{channel_Name[6]}}</a><br>
+                        <a href="{{ url_for('channel', channel_id=7) }}" class="white-link">{{channel_Name[7]}}</a><br>
+                        <a href="{{ url_for('channel', channel_id=8) }}" class="white-link">{{channel_Name[8]}}</a><br>
+                        <a href="{{ url_for('channel', channel_id=9) }}" class="white-link">{{channel_Name[9]}}</a><br>
+                        <a href="{{ url_for('channel', channel_id=10) }}" class="white-link">{{channel_Name[10]}}</a><br>
+                        <a href="{{ url_for('channel', channel_id=11) }}" class="white-link">{{channel_Name[11]}}</a><br>
+                        <a href="{{ url_for('channel', channel_id=12) }}" class="white-link">{{channel_Name[12]}}</a><br>
+                        <a href="{{ url_for('channel', channel_id=13) }}" class="white-link">{{channel_Name[13]}}</a><br>
+                        <a href="{{ url_for('channel', channel_id=14) }}" class="white-link">{{channel_Name[14]}}</a><br>
+                        <a href="{{ url_for('channel', channel_id=15) }}" class="white-link">{{channel_Name[15]}}</a><br>
+                        <a href="{{ url_for('channel', channel_id=16) }}" class="white-link">{{channel_Name[16]}}</a><br>
+                        <a href="{{ url_for('channel', channel_id=17) }}" class="white-link">{{channel_Name[17]}}</a><br>
+                        <a href="{{ url_for('channel', channel_id=18) }}" class="white-link">{{channel_Name[18]}}</a><br>
+                        <a href="{{ url_for('channel', channel_id=19) }}" class="white-link">{{channel_Name[19]}}</a><br>
+  </p>
+  </section>
+ </div> 
   
-  <h2>Channel</h2>
-  <br><br>
-  <div class="list-group">
-  <div ng-show="showMe">
-  <p class="font-blue">Channel</p>
-  
-    {{channel_Name[1]}}
-    
-    <br><br>
-    <p class="font-blue">Channel Description</p>
-    {{channel_Description[1]}}
-    <br><br>
-    <p class="font-blue">User who created this channel</p>
-    {{username_channel[1]}}
-  
-</div>
-  </div>
-</div>
-<br><br>
+
+
+
+ 
  
 </div> 
 

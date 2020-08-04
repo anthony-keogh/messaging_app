@@ -61,34 +61,35 @@ def team():
     return render_template('team.html')
 
 
-
-@app.route('/message')
-def message():
-    message = mongo.db.message.find_one()
+@app.route('/message/<int:message_id>')
+def message(message_id):
+    message = mongo.db.message.find_one( {"_id": ObjectId("5f2702283f32117cb71c536d")})
     return render_template('message.html', message=message)
     
+
+
+
 
 
 #----------- channels ------------------#
 
 @app.route('/channels/', methods=['GET'])
 def channels():
-  all_channel = mongo.db.channel                                                                                       #find channel
-  
+  all_channel = mongo.db.channel                                                                                     
   channel_Name = []
-  channel_Description = [] 
-  username_channel = [] 
-                                                                                                                #make array
-  for s in all_channel.find({}):                                                                                    #find everything about this channel
+  #channel_Description = [] 
+  #username_channel = [] 
+                                       
+  for s in all_channel.find({}):                                                                              
     channel_Name.append({ s['channel_Name']})
  
-  for s in all_channel.find({}):                                                                                         #find everything about this channel
-    channel_Description.append({ s['channel_Description']}) 
+  #for s in all_channel.find({}):                                                                                       
+  #  channel_Description.append({ s['channel_Description']})
 
-  for s in all_channel.find({}):                                                                                         #find everything about this channel
-    username_channel.append({ s['username_channel']}) 
+  #for s in all_channel.find({}):                                                                                        
+   # username_channel.append({ s['username_channel']}) 
 
-  return render_template('channels.html' , channel_Name=channel_Name,   channel_Description=channel_Description, username_channel=username_channel)  
+  return render_template('channels.html' , channel_Name=channel_Name   )  
   
   
 #----------- messages ------------------#
@@ -125,9 +126,10 @@ def messages():
 
 
 
-@app.route('/channel')
-def channel():
-    channel = mongo.db.channel.find_one()
+@app.route('/channel/<int:channel_id>')
+def channel(channel_id):
+    
+    channel = mongo.db.channel.find_one( {"_id": ObjectId("5f2475d2b770b568efa24e61")})
     return render_template('channel.html', channel=channel)
 
 
@@ -249,11 +251,12 @@ def adding_messages():
                         'summary': request.form.get('summary'),
                         'username': request.form.get('username'),
                         "date_added": today,
-                        'channel_Name': request.form.get('channel_Name')
+                        'channel_Name': request.form.get('selectpicker')
                         
                         
    })
    
+    
     
     return redirect(url_for('messages'))
 
