@@ -31,9 +31,6 @@ mongo = PyMongo(app)
 
 
 
-    
-    
-
 # ----------------- Routes to Pages ------------------ #
 @app.route('/')
 def index():
@@ -61,69 +58,18 @@ def team():
     return render_template('team.html')
 
 
-@app.route('/message/<int:message_id>')
-def message(message_id):
-    message = mongo.db.message.find_one( {"_id": ObjectId("5f2702283f32117cb71c536d")})
-    return render_template('message.html', message=message)
-    
 
-
-
-
-
-#----------- channels ------------------#
+#----------- channel page ------------------#
 
 @app.route('/channels/', methods=['GET'])
 def channels():
   all_channel = mongo.db.channel                                                                                     
   channel_Name = []
-  #channel_Description = [] 
-  #username_channel = [] 
-                                       
+            
   for s in all_channel.find({}):                                                                              
     channel_Name.append({ s['channel_Name']})
  
-  #for s in all_channel.find({}):                                                                                       
-  #  channel_Description.append({ s['channel_Description']})
-
-  #for s in all_channel.find({}):                                                                                        
-   # username_channel.append({ s['username_channel']}) 
-
   return render_template('channels.html' , channel_Name=channel_Name   )  
-  
-  
-#----------- messages ------------------#
-
-@app.route('/messages', methods=['GET'])
-def messages():
-  all_message = mongo.db.message                                                                                       #find channel
-  all_channel = mongo.db.channel                                                                                       #find channel
-  
-  channel_Name= []
-  message_Description = []
-  summary = [] 
-  username = [] 
-  date_added = [] 
-
-  for s in all_channel.find({}):                                                                                    #find everything about this channel
-    channel_Name.append({ s['channel_Name']})              
-                                                                                                        #make array
-  for s in all_message.find({}):                                                                                    #find everything about this channel
-    message_Description.append({ s['message_Description']}) 
-                                
-
-  for s in all_message.find({}):                                                                                         #find everything about this channel
-    summary.append({ s['summary']}) 
-
-  for s in all_message.find({}):                                                                                         #find everything about this channel
-    username.append({ s['username']})
-
-  for s in all_message.find({}):                                                                                         #find everything about this channel
-    date_added.append({ s['date_added']}) 
-
-  return render_template('messages.html' ,channel_Name=channel_Name, message_Description=message_Description, summary=summary, username=username, date_added=date_added )  
-  #return jsonify({'result' : output})
-
 
 
 @app.route('/channel/<int:channel_id>')
@@ -131,61 +77,6 @@ def channel(channel_id):
     
     channel = mongo.db.channel.find_one( {"_id": ObjectId("5f2475d2b770b568efa24e61")})
     return render_template('channel.html', channel=channel)
-
-
-
-
-
-
-# ----------------- Add User Data  and login ------------------ #
-
-
-        
-@app.route('/register', methods=['POST', 'GET'])
-def register():
-    if request.method == 'POST': 
-       
-        useremail = request.form['useremail'] #asking user to fill out this form field
-        username = request.form['username']
-        userpassword = request.form['userpassword']
-        userprofile = {'username': username, 'useremail': useremail, 'userpassword': userpassword}
-        
-        
-        if mongo.db.users.find_one({"username": username, "useremail": useremail}): #checking mongodb for matching email
-            return 'Sorry, this password has already been taken by someone else'
-        else:
-            mongo.db.users.insert_one(userprofile)
-        session['username'] = request.form['username'] #sessions are important because of tracking a user
-        return render_template('index.html', userprofile=userprofile, userpassword=userpassword)
-    return render_template("auth/registration.html")
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    username = session.get('username')
-    if username:
-        users = mongo.db.users.find()
-        return render_template('index.html', users=users)
-
-    else:
-        if request.method == 'POST':
-    
-            userpassword = request.form['userpassword'] #asking user to fill out this form field
-            useremail = request.form["useremail"]
-            
-        
-            userprofile = mongo.db.users.find_one({"username": username})
-            userEmail = mongo.db.users.find_one({"useremail": useremail})
-
-            if userprofile and userEmail and mongo.db.users.find_one({"userpassword": userpassword}):
-        
-                session["users"] = request.form.get("username")
-                return render_template('add_message.html', username_profile=session["users"])
-            else:
-                return 'sorry wrong password or email'
-    return render_template('auth/login.html')
-
-
-
 
 
 
@@ -210,11 +101,44 @@ def adding_channels():
     
     return redirect(url_for('channels'))
 
+#----------- message page ------------------#
 
+@app.route('/message/<int:message_id>')
+def message(message_id):
+    message = mongo.db.message.find_one( {"_id": ObjectId("5f2702283f32117cb71c536d")})
+    return render_template('message.html', message=message)
+    
 
+#----------- messages ------------------#
 
+@app.route('/messages', methods=['GET'])
+def messages():
+  all_message = mongo.db.message                                                                                       #find channel
+  all_channel = mongo.db.channel                                                                                       #find channel
+  
+  channel_Name= []
+  message_Description = []
+  summary = [] 
+  username = [] 
+  date_added = [] 
 
+  for s in all_channel.find({}):                                                                                    #find everything about this channel
+    channel_Name.append({ s['channel_Name']})              
+                                                                                                        #make array
+  for s in all_message.find({}):                                                                                    #find everything about this channel
+    message_Description.append({ s['message_Description']}) 
+                                
+  for s in all_message.find({}):                                                                                         #find everything about this channel
+    summary.append({ s['summary']}) 
 
+  for s in all_message.find({}):                                                                                         #find everything about this channel
+    username.append({ s['username']})
+
+  for s in all_message.find({}):                                                                                         #find everything about this channel
+    date_added.append({ s['date_added']}) 
+
+  return render_template('messages.html' ,channel_Name=channel_Name, message_Description=message_Description, summary=summary, username=username, date_added=date_added )  
+ 
 
 
 
@@ -260,6 +184,7 @@ def adding_messages():
     
     return redirect(url_for('messages'))
 
+
 # ----------------- Edit message Data ------------------ #
 
 @app.route('/edit_message/<message_id>')
@@ -294,6 +219,50 @@ def deleteAll():
 
 
 
+# ----------------- Add User Data  and login ------------------ #
+    
+@app.route('/register', methods=['POST', 'GET'])
+def register():
+    if request.method == 'POST': 
+       
+        useremail = request.form['useremail'] #asking user to fill out this form field
+        username = request.form['username']
+        userpassword = request.form['userpassword']
+        userprofile = {'username': username, 'useremail': useremail, 'userpassword': userpassword}
+        
+        
+        if mongo.db.users.find_one({"username": username, "useremail": useremail}): #checking mongodb for matching email
+            return 'Sorry, this password has already been taken by someone else'
+        else:
+            mongo.db.users.insert_one(userprofile)
+        session['username'] = request.form['username'] #sessions are important because of tracking a user
+        return render_template('index.html', userprofile=userprofile, userpassword=userpassword)
+    return render_template("auth/registration.html")
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    username = session.get('username')
+    if username:
+        users = mongo.db.users.find()
+        return render_template('index.html', users=users)
+
+    else:
+        if request.method == 'POST':
+    
+            userpassword = request.form['userpassword'] #asking user to fill out this form field
+            useremail = request.form["useremail"]
+            
+        
+            userprofile = mongo.db.users.find_one({"username": username})
+            userEmail = mongo.db.users.find_one({"useremail": useremail})
+
+            if userprofile and userEmail and mongo.db.users.find_one({"userpassword": userpassword}):
+        
+                session["users"] = request.form.get("username")
+                return render_template('add_message.html', username_profile=session["users"])
+            else:
+                return 'sorry wrong password or email'
+    return render_template('auth/login.html')
 
 
 
