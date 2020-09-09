@@ -109,7 +109,7 @@ def message(message_id):
     message = mongo.db.message.find_one( {"_id": ObjectId("5f2702283f32117cb71c536d")})
     return render_template('message.html', message=message)
     
-
+ 
 #----------- messages ------------------#
 
 @app.route('/messages', methods=['GET'])
