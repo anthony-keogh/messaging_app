@@ -7,6 +7,7 @@ from wtforms import Form, BooleanField, StringField, PasswordField, validators
 import os
 from datetime import datetime
 import json
+import string
 
 from flask import jsonify
 from flask import session
@@ -116,14 +117,17 @@ def messages():
   all_message = mongo.db.message                                                                                       #find channel
   all_channel = mongo.db.channel                                                                                       #find channel
   
-  channel_Name= []
-  message_Description = []
-  summary = [] 
-  username = [] 
+  channel_Name= [] 
+  message_Description = [] 
+  summary = []
+  username = []
   date_added = [] 
 
+  
+
   for s in all_channel.find({}):                                                                                    #find everything about this channel
-    channel_Name.append({ s['channel_Name']})              
+    channel_Name.append({ s['channel_Name']})  
+               
                                                                                                         #make array
   for s in all_message.find({}):                                                                                    #find everything about this channel
     message_Description.append({ s['message_Description']}) 
@@ -136,6 +140,8 @@ def messages():
 
   for s in all_message.find({}):                                                                                         #find everything about this channel
     date_added.append({ s['date_added']}) 
+
+  
 
   return render_template('messages.html' ,channel_Name=channel_Name, message_Description=message_Description, summary=summary, username=username, date_added=date_added )  
  

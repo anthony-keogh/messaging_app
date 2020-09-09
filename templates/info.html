@@ -5,28 +5,24 @@
 {% endblock %}
 
 {% block content %} 
-<h1 style="color:black; text-shadow:2px 2px white;">Info</h1>
+<h1 style="color:black; text-shadow:2px 2px white;">Information</h1>
 
    <div class="well text-center" style="">
     <div class="col-md-12"></div>
     <div class="row">
         <div class="col-md-6">
         <div style="height:70px;"></div>
-        <h2>How to use our messaging app</h2>
+        <h2>Information Links</h2>
         <div style="height:50px; "></div>
-            <p class="get-started-para">Founded by Sarah and Maeve from Dublin after they got an idea in college to setup their own app, which grew into a startup.
-            <br><br>They both had a problem of trying to find talent CEO's to get advice and guidance to further their career in the tech industry.
-            <br>Sarah and Maeve turned the problem into a solution and its been a huge success and are expanding their application to a global market.</p>
+            <p class="get-started-para"> 
+            Getting started: <a href="{{ url_for('getting_started') }}" class="white-font-footer"><span style="color:yellow;">Here:</span></a> 
+            <br><br>Our Team : <a href="{{ url_for('team') }}" class="white-font-footer"><span style="color:yellow;">Here:</span></a>
+            <br><br>Sign Up: <a href="{{ url_for('register') }}"><span style="color:yellow;">Here:</span> </a></li>
+            <br></p>
         <div style="height:50px; "></div>
         </div>
-        <div class="col-md-6 black-background">
-        <div style="height:70px;"></div>
-        <h2>How to use our messaging app</h2>
-            <div style="height:50px; "></div>
-            <p class="get-started-para">Founded by Sarah and Maeve from Dublin after they got an idea in college to setup their own app, which grew into a startup.
-            <br><br>They both had a problem of trying to find talent CEO's to get advice and guidance to further their career in the tech industry.
-            <br>Sarah and Maeve turned the problem into a solution and its been a huge success and are expanding their application to a global market.</p>
-        <div style="height:50px; "></div>
+        <div class="col-md-6 ">
+         <img src="static/img/man-coffee-cup-pen.jpg"  style="height:400px; width:100%;" alt="ccs_logo">
         </div>
         </div>
     </div>
