@@ -38,22 +38,31 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(
   <div style="text-align:center;">
   <p style="color:white; font-size:15px;">
   {% for messages in messages_All %}
-  <div style="" >
-                        <a href="{{ url_for('view_message', message_id=messages._id) }}" >
-                        <br><br>
-                       <p class="yellow glyphicon glyphicon-envelope" > <span style="width:20px"></span><p style=" color:white;font-size:15px;">{{ messages.message_Description }}</p></p><br>
-                        <p class="yellow glyphicon glyphicon-user"> <span style="width:20px"></span><p style=" color:white;font-size:15px;">{{ messages.username }}</p></p><br>
-                        <p class="yellow glyphicon glyphicon-time" ><span style="width:20px"></span><p style=" color:white;font-size:15px;">{{ messages.date_added }}</p></p><br>
-                       
-                        </a>
-  
-                        <br><br>
-                        <div style="border-bottom: 5px solid white;"></div>
-                         <div>
+  <br><br>
+         <a href="{{ url_for('view_message', message_id=messages._id) }}"style="color:white;" ><div class="glyphicon glyphicon-envelope" style="color:yellow;"></div><p style=" color:white;font-size:15px;">View Full Message</p></a>
+            <br><br>
+                <p class="yellow glyphicon glyphicon-comment" > 
+                    <span style="width:20px"></span>
+                        <p style=" color:white;font-size:15px;">{{ messages.message_Description }}
+                        </p>
+                </p><br>
+                    <p class="yellow glyphicon glyphicon-user"> 
+                        <span style="width:20px"></span>
+                            <p style=" color:white;font-size:15px;">{{ messages.username }}</p>
+                    </p><br>
+                        <p class="yellow glyphicon glyphicon-time" >
+                            <span style="width:20px"></span>
+                            <p style=" color:white;font-size:15px;">{{ messages.date_added }}</p>
+                        </p><br>
+                
+            <br><br>
+            <div style="border-bottom: 5px solid white;"></div>
+            <div>
+         
   {% endfor %}
   </p>
     
-  </div>
+  
 </div>
 <br><br>
 

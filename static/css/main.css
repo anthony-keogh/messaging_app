@@ -195,6 +195,11 @@ p.yellow.glyphicon.glyphicon-user{
 p.yellow.glyphicon.glyphicon-time{
     color: yellow;
 }
+
+p.yellow.glyphicon.glyphicon-comment{
+    color: yellow;
+}
+
 .btn-lg {
     
     border-radius: 0px;
