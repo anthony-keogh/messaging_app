@@ -185,7 +185,16 @@ h1.login-h1{
 
 font-size:30px;
 }
+p.yellow.glyphicon.glyphicon-envelope{
+    color: yellow;
+}
+p.yellow.glyphicon.glyphicon-user{
+    color: yellow;
+}
 
+p.yellow.glyphicon.glyphicon-time{
+    color: yellow;
+}
 .btn-lg {
     
     border-radius: 0px;

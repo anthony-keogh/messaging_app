@@ -32,45 +32,29 @@
   
 </div>
 
-<div class="container messages-container">
+
+  <div style="background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);">
+  <div style="text-align:center;">
+  <p style="color:white; font-size:15px;">
+  {% for messages in messages_All %}
+  <div style="" >
+                        <a href="{{ url_for('view_message', message_id=messages._id) }}" >
+                        <br><br>
+                       <p class="yellow glyphicon glyphicon-envelope" > <span style="width:20px"></span><p style=" color:white;font-size:15px;">{{ messages.message_Description }}</p></p><br>
+                        <p class="yellow glyphicon glyphicon-user"> <span style="width:20px"></span><p style=" color:white;font-size:15px;">{{ messages.username }}</p></p><br>
+                        <p class="yellow glyphicon glyphicon-time" ><span style="width:20px"></span><p style=" color:white;font-size:15px;">{{ messages.date_added }}</p></p><br>
+                       
+                        </a>
   
-  <h2>Messages</h2>
-  <p>Below is a list of messages to browse</p>
-  <div >
-  <div class="list-group">
-  
+                        <br><br>
+                        <div style="border-bottom: 5px solid white;"></div>
+                         <div>
+  {% endfor %}
+  </p>
     
-    <a href="{{ url_for('message',message_id=1) }}" class="list-group-item "></p><p style="color:red;">{{date_added[1]}}</p><span style="width:50px;"></span><p style="color:blue;">{{username[1]}}</p><span style="width:50px;"></span><p style="color:black;">{{message_Description[1]}}</p></a>
-    <a href="{{ url_for('message',message_id=2) }}" class="list-group-item "></p><p style="color:red;">{{date_added[2]}}</p><span style="width:50px;"></span><p style="color:blue;">{{username[2]}}</p><span style="width:50px;"></span><p style="color:black;">{{message_Description[2]}}</p></a>
-    <a href="{{ url_for('message',message_id=3) }}" class="list-group-item "></p><p style="color:red;">{{date_added[3]}}</p><span style="width:50px;"></span><p style="color:blue;">{{username[3]}}</p><span style="width:50px;"></span><p style="color:black;">{{message_Description[3]}}</p></a>
-    <a href="{{ url_for('message',message_id=4) }}" class="list-group-item "></p><p style="color:red;">{{date_added[4]}}</p><span style="width:50px;"></span><p style="color:blue;">{{username[4]}}</p><span style="width:50px;"></span><p style="color:black;">{{message_Description[4]}}</p></a>
-    <a href="{{ url_for('message',message_id=5) }}" class="list-group-item "></p><p style="color:red;">{{date_added[5]}}</p><span style="width:50px;"></span><p style="color:blue;">{{username[5]}}</p><span style="width:50px;"></span><p style="color:black;">{{message_Description[5]}}</p></a>
-    <a href="{{ url_for('message',message_id=6) }}" class="list-group-item "><p style="color:red;">{{date_added[6]}}</p><span style="width:50px;"></span><p style="color:blue;">{{username[6]}}</p><span style="width:50px;"></span><p style="color:black;">{{message_Description[6]}}</p></a>
-    <a href="{{ url_for('message',message_id=7) }}" class="list-group-item "><p style="color:red;">{{date_added[7]}}</p><span style="width:50px;"></span><p style="color:blue;">{{username[7]}}</p><span style="width:50px;"></span><p style="color:black;">{{message_Description[7]}}</p></a>
-    <a href="{{ url_for('message',message_id=8) }}" class="list-group-item "><p style="color:red;">{{date_added[8]}}</p><span style="width:50px;"></span><p style="color:blue;">{{username[8]}}</p><span style="width:50px;"></span><p style="color:black;">{{message_Description[8]}}</p></a>
-    <a href="{{ url_for('message',message_id=9) }}" class="list-group-item "><p style="color:red;">{{date_added[9]}}</p><span style="width:50px;"></span><p style="color:blue;">{{username[9]}}</p><span style="width:50px;"></span><p style="color:black;">{{message_Description[9]}}</p></a>
-    <a href="{{ url_for('message',message_id=10) }}" class="list-group-item "><p style="color:red;">{{date_added[10]}}</p><span style="width:50px;"></span><p style="color:blue;">{{username[10]}}</p><span style="width:50px;"></span><p style="color:black;">{{message_Description[10]}}</p></a>
-    <a href="{{ url_for('message',message_id=11) }}" class="list-group-item "><p style="color:red;">{{date_added[11]}}</p><span style="width:50px;"></span><p style="color:blue;">{{username[11]}}</p><span style="width:50px;"></span><p style="color:black;">{{message_Description[11]}}</p></a>
-    <a href="{{ url_for('message',message_id=12) }}" class="list-group-item "><p style="color:red;">{{date_added[12]}}</p><span style="width:50px;"></span><p style="color:blue;">{{username[12]}}</p><span style="width:50px;"></span><p style="color:black;">{{message_Description[12]}}</p></a>
-    <a href="{{ url_for('message',message_id=13) }}" class="list-group-item "><p style="color:red;">{{date_added[13]}}</p><span style="width:50px;"></span><p style="color:blue;">{{username[13]}}</p><span style="width:50px;"></span><p style="color:black;">{{message_Description[13]}}</p></a>
-    <a href="{{ url_for('message',message_id=14) }}" class="list-group-item "><p style="color:red;">{{date_added[14]}}</p><span style="width:50px;"></span><p style="color:blue;">{{username[14]}}</p><span style="width:50px;"></span><p style="color:black;">{{message_Description[14]}}</p></a>
-    <a href="{{ url_for('message',message_id=15) }}" class="list-group-item "><p style="color:red;">{{date_added[15]}}</p><span style="width:50px;"></span><p style="color:blue;">{{username[15]}}</p><span style="width:50px;"></span><p style="color:black;">{{message_Description[15]}}</p></a>
-    <a href="{{ url_for('message',message_id=16) }}" class="list-group-item "><p style="color:red;">{{date_added[16]}}</p><span style="width:50px;"></span><p style="color:blue;">{{username[16]}}</p><span style="width:50px;"></span><p style="color:black;">{{message_Description[16]}}</p></a>
-    <a href="{{ url_for('message',message_id=17) }}" class="list-group-item "><p style="color:red;">{{date_added[17]}}</p><span style="width:50px;"></span><p style="color:blue;">{{username[17]}}</p><span style="width:50px;"></span><p style="color:black;">{{message_Description[17]}}</p></a>
-    <a href="{{ url_for('message',message_id=18) }}" class="list-group-item "><p style="color:red;">{{date_added[18]}}</p><span style="width:50px;"></span><p style="color:blue;">{{username[18]}}</p><span style="width:50px;"></span><p style="color:black;">{{message_Description[18]}}</p></a>
-    <a href="{{ url_for('message',message_id=19) }}" class="list-group-item "><p style="color:red;">{{date_added[19]}}</p><span style="width:50px;"></span><p style="color:blue;">{{username[19]}}</p><span style="width:50px;"></span><p style="color:black;">{{message_Description[19]}}</p></a>
-    <a href="{{ url_for('message',message_id=20) }}" class="list-group-item "><p style="color:red;">{{date_added[20]}}</p><span style="width:50px;"></span><p style="color:blue;">{{username[20]}}</p><span style="width:50px;"></span><p style="color:black;">{{message_Description[20]}}</p></a>
-    <a href="{{ url_for('message',message_id=21) }}" class="list-group-item "><p style="color:red;">{{date_added[21]}}</p><span style="width:50px;"></span><p style="color:blue;">{{username[21]}}</p><span style="width:50px;"></span><p style="color:black;">{{message_Description[21]}}</p></a>
-    <a href="{{ url_for('message',message_id=22) }}" class="list-group-item "><p style="color:red;">{{date_added[22]}}</p><span style="width:50px;"></span><p style="color:blue;">{{username[22]}}</p><span style="width:50px;"></span><p style="color:black;">{{message_Description[22]}}</p></a>
   </div>
 </div>
-</div>
 <br><br>
-
- 
- 
- 
-
-
 
 {% endblock %}

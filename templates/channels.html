@@ -37,27 +37,16 @@
 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);" >
   <div style="height:25px;"></div>
   <section class="section center ">
-  <p style="margin-left:25px;" class="white-text">
-                        <a href="{{ url_for('channel', channel_id=1) }}" class="white-link">{{channel_Name[1]}}</a><br>
-                        <a href="{{ url_for('channel', channel_id=2) }}" class="white-link">{{channel_Name[2]}}</a><br>
-                        <a href="{{ url_for('channel', channel_id=3) }}" class="white-link">{{channel_Name[3]}}</a><br>
-                        <a href="{{ url_for('channel', channel_id=4) }}" class="white-link">{{channel_Name[4]}}</a><br>
-                        <a href="{{ url_for('channel', channel_id=5) }}" class="white-link">{{channel_Name[5]}}</a><br>
-                        <a href="{{ url_for('channel', channel_id=6) }}" class="white-link">{{channel_Name[6]}}</a><br>
-                        <a href="{{ url_for('channel', channel_id=7) }}" class="white-link">{{channel_Name[7]}}</a><br>
-                        <a href="{{ url_for('channel', channel_id=8) }}" class="white-link">{{channel_Name[8]}}</a><br>
-                        <a href="{{ url_for('channel', channel_id=9) }}" class="white-link">{{channel_Name[9]}}</a><br>
-                        <a href="{{ url_for('channel', channel_id=10) }}" class="white-link">{{channel_Name[10]}}</a><br>
-                        <a href="{{ url_for('channel', channel_id=11) }}" class="white-link">{{channel_Name[11]}}</a><br>
-                        <a href="{{ url_for('channel', channel_id=12) }}" class="white-link">{{channel_Name[12]}}</a><br>
-                        <a href="{{ url_for('channel', channel_id=13) }}" class="white-link">{{channel_Name[13]}}</a><br>
-                        <a href="{{ url_for('channel', channel_id=14) }}" class="white-link">{{channel_Name[14]}}</a><br>
-                        <a href="{{ url_for('channel', channel_id=15) }}" class="white-link">{{channel_Name[15]}}</a><br>
-                        <a href="{{ url_for('channel', channel_id=16) }}" class="white-link">{{channel_Name[16]}}</a><br>
-                        <a href="{{ url_for('channel', channel_id=17) }}" class="white-link">{{channel_Name[17]}}</a><br>
-                        <a href="{{ url_for('channel', channel_id=18) }}" class="white-link">{{channel_Name[18]}}</a><br>
-                        <a href="{{ url_for('channel', channel_id=19) }}" class="white-link">{{channel_Name[19]}}</a><br>
+  
+  <p style="" class="white-text">
+ {% for channels in channel_Name %}
+                        <br><br>
+                        <p style="text-align:center;"> <a href="{{ url_for('view_channel', channel_id=channels._id) }}" class="white-link">{{channels.channel_Name}}</a><br>
+                        <br><br>
+                        <div style="border-bottom: 5px solid white;"></div>
+  {% endfor %}
   </p>
+  
   </section>
  </div> 
   

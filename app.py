@@ -64,19 +64,17 @@ def team():
 
 @app.route('/channels/', methods=['GET'])
 def channels():
-  all_channel = mongo.db.channel                                                                                     
-  channel_Name = []
-            
-  for s in all_channel.find({}):                                                                              
-    channel_Name.append({ s['channel_Name']})
- 
+  
+  
+  channel_Name = mongo.db.channel.find()         
+  
   return render_template('channels.html' , channel_Name=channel_Name   )  
 
 
-@app.route('/channel/<int:channel_id>')
-def channel(channel_id):
+@app.route('/channel/<channel_id>')
+def view_channel(channel_id):
     
-    channel = mongo.db.channel.find_one( {"_id": ObjectId("5f2475d2b770b568efa24e61")})
+    channel = mongo.db.channel.find_one( {"_id": ObjectId(channel_id)})
     return render_template('channel.html', channel=channel)
 
 
@@ -104,9 +102,14 @@ def adding_channels():
 
 #----------- message page ------------------#
 
-@app.route('/message/<int:message_id>')
-def message(message_id):
-    message = mongo.db.message.find_one( {"_id": ObjectId("5f2702283f32117cb71c536d")})
+
+
+@app.route('/message/<message_id>')
+def view_message(message_id):
+    message = mongo.db.message.find_one( {"_id": ObjectId(message_id)})
+
+    
+
     return render_template('message.html', message=message)
     
  
@@ -114,37 +117,37 @@ def message(message_id):
 
 @app.route('/messages', methods=['GET'])
 def messages():
-  all_message = mongo.db.message                                                                                       #find channel
-  all_channel = mongo.db.channel                                                                                       #find channel
+  #all_message = mongo.db.message                                                                                       #find channel
+  #all_channel = mongo.db.channel                                                                                       #find channel
   
-  channel_Name= [] 
-  message_Description = [] 
-  summary = []
-  username = []
-  date_added = [] 
+  #channel_Name= [] 
+  #message_Description = [] 
+  #summary = []
+  #username = []
+  #date_added = [] 
 
-  
+  messages_All = mongo.db.message.find()
 
-  for s in all_channel.find({}):                                                                                    #find everything about this channel
-    channel_Name.append({ s['channel_Name']})  
+  #for s in all_channel.find({}):                                                                                    #find everything about this channel
+    #channel_Name.append({ s['channel_Name']})  
                
                                                                                                         #make array
-  for s in all_message.find({}):                                                                                    #find everything about this channel
-    message_Description.append({ s['message_Description']}) 
+  #for s in all_message.find({}):                                                                                    #find everything about this channel
+    #message_Description.append({ s['message_Description']}) 
                                 
-  for s in all_message.find({}):                                                                                         #find everything about this channel
-    summary.append({ s['summary']}) 
+  #for s in all_message.find({}):                                                                                         #find everything about this channel
+    #summary.append({ s['summary']}) 
 
-  for s in all_message.find({}):                                                                                         #find everything about this channel
-    username.append({ s['username']})
+  #for s in all_message.find({}):                                                                                         #find everything about this channel
+    #username.append({ s['username']})
 
-  for s in all_message.find({}):                                                                                         #find everything about this channel
-    date_added.append({ s['date_added']}) 
+  #for s in all_message.find({}):                                                                                         #find everything about this channel
+    #date_added.append({ s['date_added']}) 
 
   
 
-  return render_template('messages.html' ,channel_Name=channel_Name, message_Description=message_Description, summary=summary, username=username, date_added=date_added )  
- 
+  #return render_template('messages.html' ,channel_Name=channel_Name, message_Description=message_Description, summary=summary, username=username, date_added=date_added )  
+  return render_template('messages.html', messages_All=messages_All)
 
 
 
