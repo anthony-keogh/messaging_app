@@ -75,7 +75,8 @@ def channels():
 def view_channel(channel_id):
     
     channel = mongo.db.channel.find_one( {"_id": ObjectId(channel_id)})
-    return render_template('channel.html', channel=channel)
+   # messages_All = mongo.db.message.find()
+    return render_template('channel.html', channel=channel)#, messages_All=messages_All )
 
 
 
@@ -117,36 +118,9 @@ def view_message(message_id):
 
 @app.route('/messages', methods=['GET'])
 def messages():
-  #all_message = mongo.db.message                                                                                       #find channel
-  #all_channel = mongo.db.channel                                                                                       #find channel
   
-  #channel_Name= [] 
-  #message_Description = [] 
-  #summary = []
-  #username = []
-  #date_added = [] 
-
   messages_All = mongo.db.message.find()
 
-  #for s in all_channel.find({}):                                                                                    #find everything about this channel
-    #channel_Name.append({ s['channel_Name']})  
-               
-                                                                                                        #make array
-  #for s in all_message.find({}):                                                                                    #find everything about this channel
-    #message_Description.append({ s['message_Description']}) 
-                                
-  #for s in all_message.find({}):                                                                                         #find everything about this channel
-    #summary.append({ s['summary']}) 
-
-  #for s in all_message.find({}):                                                                                         #find everything about this channel
-    #username.append({ s['username']})
-
-  #for s in all_message.find({}):                                                                                         #find everything about this channel
-    #date_added.append({ s['date_added']}) 
-
-  
-
-  #return render_template('messages.html' ,channel_Name=channel_Name, message_Description=message_Description, summary=summary, username=username, date_added=date_added )  
   return render_template('messages.html', messages_All=messages_All)
 
 
@@ -159,12 +133,7 @@ def messages():
 def add_message():
     message_Add = mongo.db.message.find()
     channel_Name= mongo.db.channel.find()
-    all_channel = mongo.db.channel                                                                                       #find channel
-  
-    channel_Name= []
-
-    for s in all_channel.find({}):                                                                                    #find everything about this channel
-      channel_Name.append({ s['channel_Name']})  
+    all_channel = mongo.db.channel                                                                                       #find channel 
 
       #gaining access to mongodb atlas database and able to find items inside the collection
     return render_template("add_message.html",  message_Add=message_Add, channel_Name=channel_Name)
