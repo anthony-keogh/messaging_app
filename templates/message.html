@@ -6,13 +6,15 @@
 
 {% block content %} 
  
+ <body style="background: rgb(74,69,156);
+background: linear-gradient(90deg, rgba(74,69,156,1) 0%, rgba(9,9,121,1) 51%, rgba(88,106,186,1) 100%);">
  
- 
- <div class="row">
+ <div class="row" >
         <div class="col-md-4">
             
         </div>
-        <div class="col-md-4" style="margin-left:30px;">
+        <div class="col-md-4" style=" border-style: inset; background-color:white;">
+           <br>
            <p style="color:red;">Date/Time <br><span style="color:black">{{message.date_added}}</span></p>
 <br><br>
 <p style="color:red;">Username<br> <p><span style="color:black">{{message.username}}</span></p>
@@ -27,6 +29,6 @@
  
 
 
-
-
+<br><br>
+</body>
 {% endblock %}

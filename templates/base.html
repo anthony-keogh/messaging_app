@@ -48,7 +48,9 @@
       
     
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{ url_for('register') }}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="{{ url_for('messages') }}"><span class="glyphicon glyphicon-home"></span> Live Feed</a></li>
+        <li><a href="{{ url_for('profile') }}"><span class="glyphicon glyphicon-user"></span> Your Profile</a></li>
+        <li><a href="{{ url_for('register') }}"><span class="glyphicon glyphicon-file"></span> Sign Up</a></li>
         <li><a href="{{ url_for('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         
       </ul>
@@ -119,7 +121,7 @@
         <h6 class="text-uppercase font-weight-bold red-footer" >Information</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p class="white-font-footer">
-          <a href="{{ url_for('login') }}" class="white-font-footer">Your Account</a>
+          <a href="{{ url_for('login') }}" class="white-font-footer">Your Profile</a>
         </p>
         <p class="white-font-footer">
           <a href="{{ url_for('messages') }}" class="white-font-footer">Your Messages</a>

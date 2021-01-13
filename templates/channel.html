@@ -5,25 +5,31 @@
 {% endblock %}
 
 {% block content %} 
+
+
+<body style="background: rgb(74,69,156);
+background: linear-gradient(90deg, rgba(74,69,156,1) 0%, rgba(9,9,121,1) 51%, rgba(88,106,186,1) 100%);">
  
- <div class="row">
+ <div class="row mobile-row" >
         <div class="col-md-4">
             
         </div>
-        <div class="col-md-4">
-          <p style="color:red">Channel Name<br> <span style="color:black">{{channel.channel_Name}}</span></p>
-         <br>
-          <p style="color:red">Channel Description<br><span style="color:black">{{channel.channel_Description}}</span></p>
-          <br>
-           <p style="color:red">Username<br><span style="color:black">{{channel.username_channel}}</span></p>
+        <div class="col-md-4" style=" border-style: inset; background-color:white;">
+           <br>
+           <p style="color:red">Channel Name<br> <span style="color:black">{{channel.channel_Name}}</span></p>
+<br><br>
+<p style="color:red">Channel Description<br><span style="color:black">{{channel.channel_Description}}</span></p>
+<br><br>
+<p style="color:red">Username<br><span style="color:black">{{channel.username_channel}}</span></p>
+
         </div>
         <div class="col-md-4">
-          
+           
         </div>
     </div>
  
-</div>
 
 
-
+<br><br>
+</body>
 {% endblock %}

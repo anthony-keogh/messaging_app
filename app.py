@@ -13,6 +13,7 @@ from flask import jsonify
 from flask import session
 from werkzeug.security import check_password_hash, generate_password_hash
 
+#login_manager = LoginManager()
 
 app = Flask(__name__)
 
@@ -40,6 +41,8 @@ def index():
 @app.route('/getting_started')
 def getting_started():
     return render_template('getting_started.html')
+
+
 
 
 @app.route('/about')
@@ -75,8 +78,9 @@ def channels():
 def view_channel(channel_id):
     
     channel = mongo.db.channel.find_one( {"_id": ObjectId(channel_id)})
-   # messages_All = mongo.db.message.find()
-    return render_template('channel.html', channel=channel)#, messages_All=messages_All )
+    
+   
+    return render_template('channel.html', channel=channel)
 
 
 
@@ -85,25 +89,32 @@ def view_channel(channel_id):
 @app.route('/create_channel')
 def create_channel():
     channel_Add = mongo.db.channel.find()  #gaining access to mongodb atlas database and able to find items inside the collection
+    
     return render_template('create_channel.html', channel_Add=channel_Add)
 
 #channel_Add = mongo.db.messageappmicrosoft.channel.find()
 
 @app.route('/adding_channels/', methods=['GET', 'POST'])
 def adding_channels():
-    channel_add_var = mongo.db.channel  #gaining access to mongodb atlas database and able to find items inside the collection
+    channel_add_var = mongo.db.channel
+      #gaining access to mongodb atlas database and able to find items inside the collection
     channel_add_var.insert_one({
      
                         'channel_Name': request.form.get('channel_Name'), #asking user to fill out this form field
                         'channel_Description': request.form.get('channel_Description'),
                         'username_channel': request.form.get('username_channel'),
+
+                        
    })
     
     return redirect(url_for('channels'))
 
 #----------- message page ------------------#
 
-
+@app.route('/profile')
+def profile():
+    
+    return render_template('profile.html')
 
 @app.route('/message/<message_id>')
 def view_message(message_id):
@@ -120,8 +131,8 @@ def view_message(message_id):
 def messages():
   
   messages_All = mongo.db.message.find()
-
-  return render_template('messages.html', messages_All=messages_All)
+  channel_Name = mongo.db.channel.find()
+  return render_template('messages.html', messages_All=messages_All, channel_Name=channel_Name)
 
 
 
@@ -142,8 +153,9 @@ def add_message():
 def adding_messages():
     today = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
     message_add_var = mongo.db.message
-    all_channel = mongo.db.channel                                                                                       #find channel
-    
+    all_channel = mongo.db.channel
+                                                                                           #find channel
+     
     both_message_channel = all_channel and message_add_var
     
       #gaining access to mongodb atlas database and able to find items inside the collection
@@ -222,7 +234,7 @@ def login():
     username = session.get('username')
     if username:
         users = mongo.db.users.find()
-        return render_template('index.html', users=users)
+        return render_template('profile.html', users=users)
 
     else:
         if request.method == 'POST':

@@ -3,6 +3,12 @@ a:hover {
     text-decoration: none;
 }
 
+p.yellow-text{
+    color: yellow;
+}
+h4.white-text{
+    color: rgb(253, 253, 252);
+}
 a.white-text:hover {
     color:black;
     font-weight: bold;
@@ -312,7 +318,9 @@ div.hide-in-smallscreen{
     visibility: hidden;
 }
 }
-
+div.row.mobile-row{
+    margin-right: 0px!important;
+}
 a.image-shadow{
     border-radius: 50%;
     height: 70px;
