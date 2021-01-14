@@ -6,30 +6,181 @@
 
 {% block content %} 
 
+<script>
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
 
-<body style="background: rgb(74,69,156);
-background: linear-gradient(90deg, rgba(74,69,156,1) 0%, rgba(9,9,121,1) 51%, rgba(88,106,186,1) 100%);">
- 
- <div class="row mobile-row" >
-        <div class="col-md-4">
-            
-        </div>
-        <div class="col-md-4" style=" border-style: inset; background-color:white;">
-           <br>
-           <p style="color:red">Channel Name<br> <span style="color:black">{{channel.channel_Name}}</span></p>
-<br><br>
-<p style="color:red">Channel Description<br><span style="color:black">{{channel.channel_Description}}</span></p>
-<br><br>
-<p style="color:red">Username<br><span style="color:black">{{channel.username_channel}}</span></p>
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>
 
-        </div>
-        <div class="col-md-4">
-           
-        </div>
+<style>hr.dashed {
+  border-top: 3px dashed yellow;
+}
+
+
+
+
+.input-group.mb-3{
+  display : flex;
+  align-items : center;
+  justify-content: center;
+}
+div.ex1 {
+  text-align:center;
+  height:110px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+</style>
+<body style="background-color:white;">
+
+
+<div class="container text-center">    
+  <div class="row">
+    <div class="col-sm-3 well">
+      <div class="well">
+        <p style="color:white; font-size:25px;">{{session.username}}</p>
+        
+      </div>
+      <div class="well">
+        <p class="yellow-text" style="font-size:15px;">Information</p>
+        <p>
+          <a href="{{ url_for('about') }}" class="white-font-footer"><span class="label label-default">About Us</span></a>
+          <a href="{{ url_for('team') }}" class="white-font-footer"><span class="label label-primary">Our Team</span></a>
+          <a href="{{ url_for('mission') }}" class="white-font-footer"><span class="label label-success">Our Mission</span></a>
+          <a href="{{ url_for('info') }}" class="white-font-footer"><span class="label label-info">Help</span></a>
+          <a href="{{ url_for('getting_started') }}" class="white-font-footer"><span class="label label-warning">Get Started</span></a>
+          
+        </p>
+      </div>
+      <br><br>
+      <div class="" style="background-color:white">
+        <br>
+        <h3 style="color:blue;" class="channel-bold">About Channel</h3>
+        <br>
+        <p style="color:blue " class="channel-bold">Channel Name<br> <span style="color:black">{{channel.channel_Name}}</span></p>
+<br><br>
+<p style="color:blue; padding:10px; " class="channel-bold">Channel Description<br><span style="color:black">{{channel.channel_Description}}</span></p>
+<br><br>
+<p style="color:blue " class="channel-bold">Username<br><span style="color:black">{{channel.username_channel}}</span></p>
+<br><br>
+<p style="color:blue " class="channel-bold">{{channel.username_channel}} (Job Title) <br><span style="color:black">{{channel.channel_User_Job_Title}}</span></p>
+<br><br>
+<p style="color:blue " class="channel-bold">{{channel.username_channel}} (Work Experience)<br><span style="color:black">{{channel_User_Work_Experience}}</span></p>
+  <br><br>    
+      </div>
+      
     </div>
- 
+    <div class="col-sm-7 mobile-margin">
+    
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-default text-left">
+            <div class="panel-body" style="box-shadow: 7px 5px 10px 0px rgba(91,126,253,0.75);
+-webkit-box-shadow: 7px 5px 10px 0px rgba(91,126,253,0.75);
+-moz-box-shadow: 7px 5px 10px 0px rgba(91,126,253,0.75);">
+         
+<p style="color:blue; font-size:18px;">Explore Channels</p>
+<div class="ex1" style="display : flex;
+  align-items : center;
+  justify-content: center; "><div style="  margin-left:410px; background-color:white;"></div>
+ {% for channels in channel_Name %}   
+  <div style=" padding:20px; margin:10px; background-color:black;box-shadow: 13px 5px 10px 0px rgba(91,126,253,0.75);
+-webkit-box-shadow: 13px 5px 10px 0px rgba(91,126,253,0.75);
+-moz-box-shadow: 13px 5px 10px 0px rgba(91,126,253,0.75);">
 
+<a href="{{ url_for('view_channel', channel_id=channels._id) }}" style="color:white;
+"><div style="color:white;">{{channels.channel_Name}}</div></a>
+</div>
+  <br>
+  {% endfor %}
+ </div>
+         
 
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+       {% for messages in messages_All %}
+       
+        <div class="col-sm-3">
+        <br><br>
+          <div class="well well-username">
+          
+           <p style="color:yellow;">Sent by <br><span style=" color:white;font-size:20px;">{{ messages.username }}</span></p>
+                    </p>
+           
+          </div>
+        </div>
+        
+        <div class="col-sm-9">
+          <div class="well">
+          <a href="{{ url_for('view_message', message_id=messages._id) }}" style="color:#BA55D3;">View Full Message</a>
+          <p style="color:white;">Date: <span style=" color:yellow;font-size:15px;">{{ messages.date_added }}</span></p>
+                        </p><br>
+          <p style=" color:white;font-size:15px;">{{ messages.message_Description }}
+                        </p>
+            <br>
+            <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <button class="btn btn-outline-secondary" style="font-weight:bold; color:blue;" type="button">Comment</button>
+  </div>
+  
+  <input type="text" class="form-control" placeholder="leave a comment {{session.username}}" aria-label="Write a comment" aria-describedby="basic-addon1">
+
+</div>
+          </div>
+        </div>
+        
+         {% endfor %}
+         
+      </div>
+           <br><br><br>
+    </div>
+    <div class="col-sm-2 well">
+      <div class="thumbnail">
+        <p>Contact our team</p>
+        
+        <p><strong>Opening hours</strong></p>
+        <p>Mon-fri: 9am - 5pm</p>
+        <a href="{{ url_for('team') }}" class="white-font-footer"><button class="btn btn-primary" style="width:100px;">Contact</button></a>
+      </div>      
+      <div class="well">
+      <p class="yellow-text" style="font-size:20px;">Our Team</p>
+      <br>
+      <p class="white-font-team">Maria Connell</p>
+        <a href="{{ url_for('team') }}"><img src="static/img/team1.jpeg" style="width:100px; height:100px;"></a>
+      </div>
+      <br>
+      <div class="well">
+      <p class="white-font-team">Jenny O'Shea</p>
+        <a href="{{ url_for('team') }}"><img src="static/img/team2.jpeg" style="width:100px; height:100px;"></a>
+      </div>
+      <br>
+      <div class="well">
+      <p class="white-font-team">Maria Connell</p>
+        <a href="{{ url_for('team') }}"><img src="static/img/team3.jpeg" style="width:100px; height:100px;"></a>
+      </div>
+      <br>
+      <div class="well">
+      <p class="white-font-team">James Sherwood</p>
+        <a href="{{ url_for('team') }}"><img src="static/img/team4.jpeg" style="width:100px; height:100px;"></a>
+      </div>
+      <br>
+      <div class="well">
+      <p class="white-font-team">Thomas Regan</p>
+        <a href="{{ url_for('team') }}"><img src="static/img/team5.jpeg" style="width:100px; height:100px;"></a>
+      </div>
+    </div>
+  </div>
+</div>
 <br><br>
 </body>
 {% endblock %}

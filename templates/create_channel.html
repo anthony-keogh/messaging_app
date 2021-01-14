@@ -15,22 +15,33 @@
       <form method="POST" action="{{ url_for('adding_channels') }}" style="height:400px; ">
                        <div >
                             <label>Create Username</label>
-                            <input type="text" name="username_channel" class="form-control" placeholder="username" required>
+                            <input type="text" name="username_channel" class="form-control" placeholder="Enter Username" required>
                         </div><br>
                        <div >
                             <label>Create Channel name</label>
                             
-                            <input type="text" name="channel_Name" class="form-control" placeholder="Enter-Your-Channel-Name" required>
+                            <input type="text" name="channel_Name" class="form-control" placeholder="Enter Your Channel Name" required>
                         </div>
                         <br>
                         <div >
                             <label>Create Channel description</label>
-                            <input type="text" name="channel_Description" class="form-control" placeholder="Channel-Description" required>
+                            <input type="text" name="channel_Description" class="form-control" placeholder="Enter Channel Description" required>
+                        </div>
+                        <br>
+                        <div >
+                            <label>Current Job Title</label>
+                            <input type="text" name="channel_User_Job_Title" class="form-control" placeholder="Job Title" required>
+                        </div>
+                        <br>
+                        <div >
+                            <label>Your Work experience</label>
+                            <input type="text" name="channel_User_Work_Experience" class="form-control" placeholder="Work Experience" required>
                         </div>
 <br>
 
       <button type="submit" name="action" style="background-color:blue; color:white;" class="submit-button">Submit</button>
       </form>
+      <br><br><br><br>
 </div>
 </div>
 

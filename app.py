@@ -76,11 +76,11 @@ def channels():
 
 @app.route('/channel/<channel_id>')
 def view_channel(channel_id):
-    
+    channel_Name = mongo.db.channel.find()
     channel = mongo.db.channel.find_one( {"_id": ObjectId(channel_id)})
-    
+    messages_All = mongo.db.message.find()
    
-    return render_template('channel.html', channel=channel)
+    return render_template('channel.html', channel=channel, messages_All=messages_All, channel_Name=channel_Name )
 
 
 
@@ -97,13 +97,16 @@ def create_channel():
 @app.route('/adding_channels/', methods=['GET', 'POST'])
 def adding_channels():
     channel_add_var = mongo.db.channel
+    today = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
       #gaining access to mongodb atlas database and able to find items inside the collection
     channel_add_var.insert_one({
      
                         'channel_Name': request.form.get('channel_Name'), #asking user to fill out this form field
                         'channel_Description': request.form.get('channel_Description'),
                         'username_channel': request.form.get('username_channel'),
-
+                        'channel_User_Job_Title': request.form.get('channel_User_Job_Title'),
+                        'channel_User_Work_Experience': request.form.get('channel_User_Work_Experience'),
+                        "date_added": today,
                         
    })
     
@@ -259,4 +262,4 @@ def login():
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=os.environ.get('PORT'),
-            debug=False)
+            debug=True)

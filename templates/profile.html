@@ -8,18 +8,8 @@
 
 
     <style>
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 550px}
-    
-    /* Set gray background color and 100% height */
-    .sidenav {
-      background-color: #f1f1f1;
-      height: 100%;
-    }
-        
-    /* On small screens, set height to 'auto' for the grid */
-    @media screen and (max-width: 767px) {
-      .row.content {height: auto;} 
+    .well.well-padding{
+    margin-bottom: 20px;
     }
   </style>
 
@@ -30,40 +20,40 @@
     <div class="col-sm-3 sidenav hidden-xs">
       <h2 style="color:black;">Your Profile</h2>
       <ul class="nav nav-pills nav-stacked">
-        <li class="active" style="color:white;"><a href="#section1">{{session.username}}</a></li>
-        <li><a href="#section2">Channels you follow</a></li>
-        <li><a href="#section3">Message Inbox</a></li>
-        <li><a href="#section3">Comments you sent</a></li>
+        <li class="active" style="color:black;"><a href="#section1">{{session.username}}</a></li>
+        <li ><a href="#section2" class="profile-headings" style="color:white;">Channels you follow</a></li>
+        <li ><a href="#section3" class="profile-headings" style="color:white;">Message Inbox</a></li>
+        <li ><a href="#section3" class="profile-headings" style="color:white;">Comments you sent</a></li>
       </ul><br>
     </div>
     <br>
     
     <div class="col-sm-9">
-      <div class="well">
+      <div class="well well-padding">
         <h4 class="white-text">{{session.username}}</h4>
         <p class="yellow-text">Some text..</p>
       </div>
       <div class="row">
         <div class="col-sm-3">
-          <div class="well">
+          <div class="well well-padding">
             <h4 class="white-text">Users</h4>
             <p class="yellow-text">1 Million</p> 
           </div>
         </div>
         <div class="col-sm-3">
-          <div class="well">
+          <div class="well well-padding">
             <h4 class="white-text">Pages</h4>
             <p class="yellow-text">100 Million</p> 
           </div>
         </div>
         <div class="col-sm-3">
-          <div class="well">
+          <div class="well well-padding">
             <h4 class="white-text">Sessions</h4>
             <p class="yellow-text">10 Million</p> 
           </div>
         </div>
         <div class="col-sm-3">
-          <div class="well">
+          <div class="well well-padding">
             <h4 class="white-text">Bounce</h4>
             <p class="yellow-text">30%</p> 
           </div>
@@ -71,21 +61,21 @@
       </div>
       <div class="row">
         <div class="col-sm-4">
-          <div class="well">
+          <div class="well well-padding">
             <p class="yellow-text">Text</p> 
             <p class="yellow-text">Text</p> 
             <p class="yellow-text">Text</p> 
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="well">
+          <div class="well well-padding">
             <p class="yellow-text">Text</p> 
             <p class="yellow-text">Text</p> 
             <p class="yellow-text">Text</p> 
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="well">
+          <div class="well well-padding">
             <p class="yellow-text">Text</p> 
             <p class="yellow-text">Text</p> 
             <p class="yellow-text">Text</p> 
@@ -94,12 +84,12 @@
       </div>
       <div class="row">
         <div class="col-sm-8">
-          <div class="well">
+          <div class="well well-padding">
             <p class="yellow-text">Text</p> 
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="well">
+          <div class="well well-padding">
             <p class="yellow-text">Text</p> 
           </div>
         </div>

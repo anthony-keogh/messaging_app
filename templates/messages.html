@@ -20,14 +20,22 @@ function myFunction() {
   border-top: 3px dashed yellow;
 }
 
+
+
+
+.input-group.mb-3{
+  display : flex;
+  align-items : center;
+  justify-content: center;
+}
 div.ex1 {
   text-align:center;
-  height:150px;
+  height:110px;
   overflow-x: scroll;
   overflow-y: hidden;
 }
 </style>
-<body style="background-color:black;">
+<body style="background-color:white;">
 
 
 <div class="container text-center">    
@@ -58,19 +66,23 @@ div.ex1 {
       </div>
       
     </div>
-    <div class="col-sm-7">
+    <div class="col-sm-7 mobile-margin">
     
       <div class="row">
         <div class="col-sm-12">
           <div class="panel panel-default text-left">
-            <div class="panel-body">
+            <div class="panel-body" style="box-shadow: 7px 5px 10px 0px rgba(91,126,253,0.75);
+-webkit-box-shadow: 7px 5px 10px 0px rgba(91,126,253,0.75);
+-moz-box-shadow: 7px 5px 10px 0px rgba(91,126,253,0.75);">
          
 <p style="color:blue; font-size:18px;">Explore Channels</p>
 <div class="ex1" style="display : flex;
   align-items : center;
-  justify-content: center;"><div style="  margin-left:410px; background-color:white;"></div>
+  justify-content: center; "><div style="  margin-left:410px; background-color:white;"></div>
  {% for channels in channel_Name %}   
-  <div style=" padding:20px; margin:10px;  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,78,255,1) 100%);">
+  <div style=" padding:20px; margin:10px; background-color:black;box-shadow: 13px 5px 10px 0px rgba(91,126,253,0.75);
+-webkit-box-shadow: 13px 5px 10px 0px rgba(91,126,253,0.75);
+-moz-box-shadow: 13px 5px 10px 0px rgba(91,126,253,0.75);">
 
 <a href="{{ url_for('view_channel', channel_id=channels._id) }}" style="color:white;
 "><div style="color:white;">{{channels.channel_Name}}</div></a>
@@ -87,10 +99,12 @@ div.ex1 {
       </div>
       <div class="row">
        {% for messages in messages_All %}
+       
         <div class="col-sm-3">
-          <div class="well">
+        <br><br>
+          <div class="well well-username">
           
-           <p style="color:yellow;">Sent by <br><span style=" color:white;font-size:25px;">{{ messages.username }}</span></p>
+           <p style="color:yellow;">Sent by <br><span style=" color:white;font-size:20px;">{{ messages.username }}</span></p>
                     </p>
            
           </div>
@@ -98,16 +112,25 @@ div.ex1 {
         
         <div class="col-sm-9">
           <div class="well">
-          <a href="{{ url_for('view_message', message_id=messages._id) }}" style="color:#BA55D3;">View Full Message</a>
+          <a href="{{ url_for('view_message', message_id=messages._id) }}" style="color:orange;">View Full Message</a>
           <p style="color:white;">Date: <span style=" color:yellow;font-size:15px;">{{ messages.date_added }}</span></p>
                         </p><br>
           <p style=" color:white;font-size:15px;">{{ messages.message_Description }}
                         </p>
             <br>
+            <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <button class="btn btn-outline-secondary" style="font-weight:bold; color:blue;" type="button">Comment</button>
+  </div>
+  
+  <input type="text" class="form-control" placeholder="leave a comment {{session.username}}" aria-label="Write a comment" aria-describedby="basic-addon1">
+
+</div>
           </div>
         </div>
         
          {% endfor %}
+         
       </div>
            <br><br><br>
     </div>
@@ -148,6 +171,7 @@ div.ex1 {
     </div>
   </div>
 </div>
+<br><br>
 </body>
 
 {% endblock %}

@@ -2,6 +2,9 @@ a:hover {
     color: black;
     text-decoration: none;
 }
+li a.profile-headings:hover{
+    color: black!important;
+}
 
 p.yellow-text{
     color: yellow;
@@ -67,13 +70,22 @@ p.white-text{
     color: white;
     text-decoration: none;
   }
+
+  p.channel-bold{
+      font-weight: bold;
+      
+  }
+
 .well{
     margin-bottom:-20px; 
     border:0px; 
     background: rgb(2,0,36);
 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,78,255,1) 100%);
 }
-
+.well.well-username{
+    background: rgb(32,95,144);
+background: linear-gradient(90deg, rgba(32,95,144,1) 6%, rgba(0,7,13,1) 14%, rgba(0,5,9,1) 48%, rgba(1,40,66,1) 86%, rgba(31,88,143,1) 95%);
+}
 .about-para{
     margin-bottom:-20px; background: rgb(116,104,252);
 background: linear-gradient(87deg, rgba(116,104,252,1) 16%, rgba(189,190,254,1) 49%, rgba(237,238,254,1) 100%);
@@ -313,7 +325,9 @@ p.white-text{
     color:white;
 }
 @media only screen and (max-width: 500px) {
-
+.col-sm-7.mobile-margin{
+        margin-top: 40px;
+        }
 div.hide-in-smallscreen{
     visibility: hidden;
 }
