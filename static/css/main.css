@@ -76,6 +76,13 @@ p.white-text{
       
   }
 
+
+  hr.line-break-between-messages {
+    border: 12px solid white!important;
+    
+  }
+
+
 .well{
     margin-bottom:-20px; 
     border:0px; 

@@ -59,9 +59,9 @@ div.ex1 {
       <br><br>
       <div class="" style="background-color:white">
         <br>
-        <h3 style="color:blue;">Channel Description</h3>
+        <h3 style="color:blue;" class="channel-bold">Channels You Follow</h3>
         <br>
-        <p style="padding:10px;">This is an description of the channel that you just pick.<p>
+        <p style="padding:10px;"><p>
         <br><br>
       </div>
       
@@ -110,8 +110,8 @@ div.ex1 {
           </div>
         </div>
         
-        <div class="col-sm-9">
-          <div class="well">
+        <div class="col-sm-9" >
+          <div class="well" >
           <a href="{{ url_for('view_message', message_id=messages._id) }}" style="color:orange;">View Full Message</a>
           <p style="color:white;">Date: <span style=" color:yellow;font-size:15px;">{{ messages.date_added }}</span></p>
                         </p><br>
@@ -124,14 +124,16 @@ div.ex1 {
   </div>
   
   <input type="text" class="form-control" placeholder="leave a comment {{session.username}}" aria-label="Write a comment" aria-describedby="basic-addon1">
+<br><br>
 
 </div>
           </div>
         </div>
-        
+         <hr class="line-break-between-messages">
          {% endfor %}
          
       </div>
+      
            <br><br><br>
     </div>
     <div class="col-sm-2 well">
