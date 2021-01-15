@@ -6,16 +6,47 @@
 
 {% block content %} 
 
-<script>
-// When the user scrolls the page, execute myFunction 
-window.onscroll = function() {myFunction()};
 
-function myFunction() {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  var scrolled = (winScroll / height) * 100;
-  document.getElementById("myBar").style.width = scrolled + "%";
-}
+<script>
+
+function myFunctionReadMore() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("myBtn");
+  
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more"; 
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less"; 
+      moreText.style.display = "inline";
+    }
+  }
+  
+  // When the user scrolls the page, execute myFunction 
+  window.onscroll = function() {myFunction()};
+  
+  function myFunction() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+  }
+  
+  
+  
+  // When the user scrolls the page, execute myFunction 
+  window.onscroll = function() {myFunction()};
+  
+  function myFunction() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+  }
+
 </script>
 
 <style>hr.dashed {
@@ -67,12 +98,16 @@ div.ex1 {
 <br><br>
 <p style="color:blue; padding:10px; " class="channel-bold">Channel Description<br><span style="color:black">{{channel.channel_Description}}</span></p>
 <br><br>
+<span id="dots">...</span><span id="more">
 <p style="color:blue " class="channel-bold">Username<br><span style="color:black">{{channel.username_channel}}</span></p>
 <br><br>
 <p style="color:blue " class="channel-bold">{{channel.username_channel}} (Job Title) <br><span style="color:black">{{channel.channel_User_Job_Title}}</span></p>
 <br><br>
 <p style="color:blue " class="channel-bold">{{channel.username_channel}} (Work Experience)<br><span style="color:black">{{channel_User_Work_Experience}}</span></p>
-  <br><br>    
+   </span>
+   <br><br>
+  <button onclick="myFunctionReadMore()" id="myBtn" style="background-color:blue; color:white;">Read more</button> 
+  <br><br>  
       </div>
       
     </div>
@@ -85,7 +120,14 @@ div.ex1 {
 -webkit-box-shadow: 7px 5px 10px 0px rgba(91,126,253,0.75);
 -moz-box-shadow: 7px 5px 10px 0px rgba(91,126,253,0.75);">
          
-<p style="color:blue; font-size:18px;">Explore Channels</p>
+<div class="input-group" style="display : flex;
+  align-items : center;
+  justify-content: center; width:80%;">
+  <input style="margin-left:20%;" type="search" class="form-control rounded" placeholder="Explore Channels" aria-label="Search"
+    aria-describedby="search-addon" />
+  <button  type="button" class="btn btn-outline-primary" style="background-color:blue; color:white;">Search</button>
+</div>
+<br>
 <div class="ex1" style="display : flex;
   align-items : center;
   justify-content: center; "><div style="  margin-left:410px; background-color:white;"></div>
@@ -122,8 +164,8 @@ div.ex1 {
         
         <div class="col-sm-9">
           <div class="well">
-          <a href="{{ url_for('view_message', message_id=messages._id) }}" style="color:#BA55D3;">View Full Message</a>
-          <p style="color:white;">Date: <span style=" color:yellow;font-size:15px;">{{ messages.date_added }}</span></p>
+          <a href="{{ url_for('view_message', message_id=messages._id) }}" style="color:orange;">View Full Message</a>
+          <p style="color:white;">Date: <span style=" color:yellow;font-size:15px;"><i>{{ messages.date_added }}</i></span></p>
                         </p><br>
           <p style=" color:white;font-size:15px;">{{ messages.message_Description }}
                         </p>

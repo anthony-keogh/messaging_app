@@ -6,15 +6,45 @@
 
 {% block content %} 
 <script>
-// When the user scrolls the page, execute myFunction 
-window.onscroll = function() {myFunction()};
 
-function myFunction() {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  var scrolled = (winScroll / height) * 100;
-  document.getElementById("myBar").style.width = scrolled + "%";
-}
+function myFunctionReadMore() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("myBtn");
+  
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more"; 
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less"; 
+      moreText.style.display = "inline";
+    }
+  }
+  
+  // When the user scrolls the page, execute myFunction 
+  window.onscroll = function() {myFunction()};
+  
+  function myFunction() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+  }
+  
+  
+  
+  // When the user scrolls the page, execute myFunction 
+  window.onscroll = function() {myFunction()};
+  
+  function myFunction() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+  }
+
 </script>
 <style>hr.dashed {
   border-top: 3px dashed yellow;
@@ -62,6 +92,10 @@ div.ex1 {
         <h3 style="color:blue;" class="channel-bold">Channels You Follow</h3>
         <br>
         <p style="padding:10px;"><p>
+        <span id="dots">...</span><span id="more">
+        </span>
+  <button onclick="myFunctionReadMore()" id="myBtn" style="background-color:blue; color:white;">Read more</button> 
+  <br><br>  
         <br><br>
       </div>
       
@@ -113,7 +147,7 @@ div.ex1 {
         <div class="col-sm-9" >
           <div class="well" >
           <a href="{{ url_for('view_message', message_id=messages._id) }}" style="color:orange;">View Full Message</a>
-          <p style="color:white;">Date: <span style=" color:yellow;font-size:15px;">{{ messages.date_added }}</span></p>
+          <p style="color:white;">Date: <span style=" color:yellow;font-size:15px;"><i>{{ messages.date_added }}</i></span></p>
                         </p><br>
           <p style=" color:white;font-size:15px;">{{ messages.message_Description }}
                         </p>

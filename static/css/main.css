@@ -82,7 +82,7 @@ p.white-text{
     
   }
 
-
+  #more {display: none;}
 .well{
     margin-bottom:-20px; 
     border:0px; 
