@@ -1,0 +1,221 @@
+{% extends "base.html" %}
+
+{% block header %}
+  <h1 style=" color: white;">{% block title %}Messaging App{% endblock %}</h1>
+{% endblock %}
+
+{% block content %} 
+<script>
+
+function myFunctionReadMore() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("myBtn");
+  
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more"; 
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less"; 
+      moreText.style.display = "inline";
+    }
+  }
+  
+  // When the user scrolls the page, execute myFunction 
+  window.onscroll = function() {myFunction()};
+  
+  function myFunction() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+  }
+  
+  
+  
+  // When the user scrolls the page, execute myFunction 
+  window.onscroll = function() {myFunction()};
+  
+  function myFunction() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+  }
+
+</script>
+<style>hr.dashed {
+  border-top: 3px dashed yellow;
+}
+
+
+
+
+.input-group.mb-3{
+  display : flex;
+  align-items : center;
+  justify-content: center;
+}
+div.ex1 {
+  text-align:center;
+  height:110px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+</style>
+<body style="background-color:white;">
+
+
+<div class="container text-center">    
+  <div class="row">
+    <div class="col-sm-3 well">
+      <div class="well">
+        <p style="color:white; font-size:25px;">Welcome {{session.username}}</p>
+        
+      </div>
+      <div class="well">
+        <p class="yellow-text" style="font-size:15px;">Information</p>
+        <p>
+          <a href="{{ url_for('pages_blueprint.about') }}" class="white-font-footer"><span class="label label-default">About Us</span></a>
+          <a href="{{ url_for('pages_blueprint.team') }}" class="white-font-footer"><span class="label label-primary">Our Team</span></a>
+          <a href="{{ url_for('pages_blueprint.mission') }}" class="white-font-footer"><span class="label label-success">Our Mission</span></a>
+          <a href="{{ url_for('pages_blueprint.info') }}" class="white-font-footer"><span class="label label-info">Help</span></a>
+          <a href="{{ url_for('pages_blueprint.getting_started') }}" class="white-font-footer"><span class="label label-warning">Get Started</span></a>
+          
+        </p>
+      </div>
+      <br><br>
+      <div class="" style="background-color:white">
+        <br>
+        <h3 style="color:blue;" class="channel-bold">Channels You Follow</h3>
+        <br>
+        <p style="padding:10px;"><p>
+        <span id="dots">...</span><span id="more">
+        </span>
+  <button onclick="myFunctionReadMore()" id="myBtn" style="background-color:blue; color:white;">Read more</button> 
+  <br><br>  
+        <br><br>
+      </div>
+      
+    </div>
+    <div class="col-sm-7 mobile-margin">
+    
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-default text-left">
+            <div class="panel-body" style="box-shadow: 7px 5px 10px 0px rgba(91,126,253,0.75);
+-webkit-box-shadow: 7px 5px 10px 0px rgba(91,126,253,0.75);
+-moz-box-shadow: 7px 5px 10px 0px rgba(91,126,253,0.75);">
+         
+<div class="input-group" style="display : flex;
+  align-items : center;
+  justify-content: center; width:90%;">
+  <input style="margin-left:10%;" type="search" class="form-control rounded" placeholder="Explore Channels" aria-label="Search"
+    aria-describedby="search-addon" />
+  <button  type="button" class="btn btn-outline-primary" style="background-color:blue; color:white;">Search</button>
+</div>
+<br>
+<div class="ex1" style="display : flex;
+  align-items : center;
+  justify-content: center; "><div style="  margin-left:410px; background-color:white;"></div>
+ {% for channels in channel_Name %} 
+  
+  <div style=" padding:20px; margin:10px; background-color:black;box-shadow: 13px 5px 10px 0px rgba(91,126,253,0.75);
+-webkit-box-shadow: 13px 5px 10px 0px rgba(91,126,253,0.75);
+-moz-box-shadow: 13px 5px 10px 0px rgba(91,126,253,0.75);">
+
+<a href="{{ url_for('channels_blueprint .view_channel', channel_id=channels._id) }}" style="color:white;
+"><div style="color:white;">{{channels.channel_Name}}</div></a>
+</div>
+  <br>
+  {% endfor %}
+ </div>
+         
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+       {% for messages in messages_All %}
+       
+        <div class="col-sm-3">
+        <br><br>
+          <div class="well well-username">
+          
+           <p style="color:yellow;">Sent by <br><span style=" color:white;font-size:20px;">{{ messages.username }}</span></p>
+                    </p>
+           
+          </div>
+        </div>
+        
+        <div class="col-sm-9" >
+          <div class="well" >
+          <a href="{{ url_for('messages_blueprint.view_message', message_id=messages._id) }}" style="color:orange;">View Full Message</a>
+          <p style="color:white;">Date: <span style=" color:yellow;font-size:15px;"><i>{{ messages.date_added }}</i></span></p>
+                        </p><br>
+          <p style=" color:white;font-size:15px;">{{ messages.message_Description }}
+                        </p>
+            <br>
+            <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <button class="btn btn-outline-secondary" style="font-weight:bold; color:blue;" type="button">Comment</button>
+  </div>
+  
+  <input type="text" class="form-control" placeholder="leave a comment {{session.username}}" aria-label="Write a comment" aria-describedby="basic-addon1">
+<br><br>
+
+</div>
+          </div>
+        </div>
+         <hr class="line-break-between-messages">
+         {% endfor %}
+         
+      </div>
+      
+           <br><br><br>
+    </div>
+    <div class="col-sm-2 well">
+      <div class="thumbnail">
+        <p>Contact our team</p>
+        
+        <p><strong>Opening hours</strong></p>
+        <p>Mon-fri: 9am - 5pm</p>
+        <a href="{{ url_for('pages_blueprint.team') }}" class="white-font-footer"><button class="btn btn-primary" style="width:100px;">Contact</button></a>
+      </div>      
+      <div class="well">
+      <p class="yellow-text" style="font-size:20px;">Our Team</p>
+      <br>
+      <p class="white-font-team">Maria Connell</p>
+        <a href="{{ url_for('pages_blueprint.team') }}"><img src="static/img/team1.jpeg" style="width:100px; height:100px;"></a>
+      </div>
+      <br>
+      <div class="well">
+      <p class="white-font-team">Jenny O'Shea</p>
+        <a href="{{ url_for('pages_blueprint.team') }}"><img src="static/img/team2.jpeg" style="width:100px; height:100px;"></a>
+      </div>
+      <br>
+      <div class="well">
+      <p class="white-font-team">Maria Connell</p>
+        <a href="{{ url_for('pages_blueprint.team') }}"><img src="static/img/team3.jpeg" style="width:100px; height:100px;"></a>
+      </div>
+      <br>
+      <div class="well">
+      <p class="white-font-team">James Sherwood</p>
+        <a href="{{ url_for('pages_blueprint.team') }}"><img src="static/img/team4.jpeg" style="width:100px; height:100px;"></a>
+      </div>
+      <br>
+      <div class="well">
+      <p class="white-font-team">Thomas Regan</p>
+        <a href="{{ url_for('pages_blueprint.team') }}"><img src="static/img/team5.jpeg" style="width:100px; height:100px;"></a>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
+</body>
+
+{% endblock %}

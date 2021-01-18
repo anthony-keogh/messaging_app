@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block header %}
+  <h1 style=" color: white;">{% block title %}Messaging App{% endblock %}</h1>
+{% endblock %}
+
+{% block content %} 
+<div>
+<div class="row" >
+</div>
+
+
+
+ <div style="background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);" >
+  <div style="height:25px;"></div>
+  <section class="section center ">
+  
+  <p style="" class="white-text">
+ {% for channels in channel_Name %}
+                        <br><br>
+                        <p style="text-align:center;"> <a href="{{ url_for('channels_blueprint .view_channel', channel_id=channels._id) }}" class="white-link">{{channels.channel_Name}}</a><br>
+                        <br><br>
+                        <div style="border-bottom: 5px solid white;"></div>
+  {% endfor %}
+  </p>
+  
+  </section>
+ </div> 
+  
+
+
+
+ 
+ 
+</div> 
+
+
+
+{% endblock %}

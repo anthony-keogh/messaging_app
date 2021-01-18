@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<title>{% block title %}The Advice Box: Messaging App{% endblock %}</title>
+</head>
+
+
+
+
+
+<style>
+
+</style>
+
+<body>   
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid bck-color">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ url_for('pages_blueprint.index') }}">The Advice Box</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar" style="z-index:99;">
+      <ul class="nav navbar-nav" >
+        <li ><a href="{{ url_for('pages_blueprint.index') }}">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="font-weight:bold">MENU <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ url_for('pages_blueprint.getting_started') }}">Getting Started</a></li>
+            <li><a href="{{ url_for('channels_blueprint .create_channel') }}">Create a Channel</a></li>
+            <li><a href="{{ url_for('messages_blueprint.add_message') }}">Start Messaging</a></li>
+            <li><a href="{{ url_for('pages_blueprint.about') }}">About</a></li>
+          </ul>
+        </li>
+        
+        
+      </ul>
+      
+    
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ url_for('messages_blueprint.messages') }}"><span class="glyphicon glyphicon-home"></span> Live Feed</a></li>
+        <li><a href="{{ url_for('pages_blueprint.profile') }}"><span class="glyphicon glyphicon-user"></span> Your Profile</a></li>
+        <li><a href="{{ url_for('users_blueprint.register') }}"><span class="glyphicon glyphicon-file"></span> Sign Up</a></li>
+        <li><a href="{{ url_for('users_blueprint.login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+
+
+{% block content %}
+        
+{% endblock %}
+
+
+ <!-- Footer -->
+<footer class="page-footer font-small unique-color-dark">
+
+  <div style="background-color: black; height:40px;">
+    <div class="container">
+
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left mt-5">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+        <!-- Content -->
+        <h6 class="text-uppercase font-weight-bold red-footer" >Messaging App</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p class="white-font-footer">Our mission is to get young entrepreneurs to reach the full potential. The best way is through communticating and asking question to the entreprenueral peers. This App makes that possible
+         </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 ">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold red-footer" >Business</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto white-font-footer" style="width: 60px;">
+        <p>
+          <a href="{{ url_for('pages_blueprint.about') }}" class="white-font-footer">About Us</a>
+        </p>
+        <p>
+          <a href="{{ url_for('pages_blueprint.team') }}" class="white-font-footer">Our Team</a>
+        </p>
+        <p>
+          <a href="{{ url_for('pages_blueprint.mission') }}" class="white-font-footer">Our Mission</a>
+        </p>
+        <p>
+          <a href="{{ url_for('pages_blueprint.getting_started') }}" class="white-font-footer">Get Started</a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 " style="color:white">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold red-footer" >Information</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p class="white-font-footer">
+          <a href="{{ url_for('users_blueprint.login') }}" class="white-font-footer">Your Profile</a>
+        </p>
+        <p class="white-font-footer">
+          <a href="{{ url_for('messages_blueprint.messages') }}" class="white-font-footer">Your Messages</a>
+        </p>
+        <p class="white-font-footer">
+          <a href="{{ url_for('channels_blueprint .channels') }}" class="white-font-footer">Your Channels</a>
+        </p>
+        <p class="white-font-footer">
+          <a href="{{ url_for('pages_blueprint.info') }}" class="white-font-footer">Help</a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold red-footer" >Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p style="color:white;">
+          <i class="fas fa-home mr-3 white-font" ></i> Dublin, Ireland</p>
+        <p style="color:white;">
+          <i class="fas fa-envelope mr-3 white-font" ></i> info@example.com</p>
+        <p style="color:white;">
+          <i class="fas fa-phone mr-3 white-font" ></i> + 01 222 566 54</p>
+        <p style="color:white;">
+          <i class="fas fa-print mr-3 white-font" ></i> + 01 278 699 33</p>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  
+</footer>
+<!-- Footer -->
+       
+
+   
+       
+</body>
+</html>
