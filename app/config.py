@@ -1,6 +1,7 @@
 import os
 from flask import Flask
 import config
+from app import create_app.app
 
 
 class Config(object):
