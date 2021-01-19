@@ -1,8 +1,9 @@
 import os
 from flask import Flask
 import config
-from app import create_app.app
+from app import create_app
 
+app = Flask(__name__)
 
 class Config(object):
     DEBUG = False
