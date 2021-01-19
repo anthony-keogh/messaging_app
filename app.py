@@ -13,13 +13,13 @@ from app.pages.pages_blueprint import pages_blueprint
 from app.users.users_blueprint import users_blueprint
 from app.messages.messages_blueprint import messages_blueprint
 from app.channels.channels_blueprint import channels_blueprint
-from app.config import Config
+#from app.config import Config
 from flask import Blueprint
 from app import create_app, mongo
 
 
-app = create_app(Config)
-
+#app = create_app(Config)
+app = Flask(__name__)
 
 if os.path.isfile('env.py'):
     import env
