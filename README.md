@@ -1,4 +1,4 @@
-![Optional Text](../app/static/img/theadvicebox-screenshot.PNG)
+![Optional Text](../master/app/static/img/theadvicebox-screenshot.PNG)
 
 #  http://www.theadvicebox.com/    
 
