@@ -1,6 +1,6 @@
 ![Optional Text](../master/app/static/img/theadvicebox-screenshot.PNG)
 
-#  http://www.theadvicebox.com/    
+http://www.theadvicebox.com/    
 
 # UX
 
