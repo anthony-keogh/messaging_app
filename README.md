@@ -36,11 +36,14 @@ http://www.theadvicebox.com/
 • JavaScript: https://jshint.com/
 
 
-Test File
-https://github.com/anthony-keogh/messaging_app/blob/master/app/static/img/Validations-flask-messaging-app.docx
 • Python: http://pep8online.com/
 
-Testing File
+
+Test File
+https://github.com/anthony-keogh/messaging_app/blob/master/app/static/img/Validations-flask-messaging-app.docx
+
+
+
 # Compatibility
 
 
