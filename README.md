@@ -27,6 +27,20 @@ http://www.theadvicebox.com/
 # Testing
 
 
+• HTML: https://validator.w3.org/
+
+
+• CSS: https://jigsaw.w3.org/css-validator/
+
+
+• JavaScript: https://jshint.com/
+
+
+Test File
+https://github.com/anthony-keogh/messaging_app/blob/master/app/static/img/Validations-flask-messaging-app.docx
+• Python: http://pep8online.com/
+
+Testing File
 # Compatibility
 
 
