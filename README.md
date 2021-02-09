@@ -81,14 +81,44 @@ https://github.com/anthony-keogh/messaging_app/blob/master/app/static/img/Valida
 
 # Compatibility
 
+• Chrome
+
+• Firefox
+
+• Safari
+
+• Internet Explorer
+
+• Edge
+
 
 # Deployment
 
   # Local Deployment
   
+  • Python
+
+  • GIT
+
+  • PIP
+
+  • Visual Studio Code(Microsoft)
+  
   # Remote Deployment
   
+  • Heroku
+  
 # Credits
+
+• https://www.w3schools.com/
+
+• https://flask.palletsprojects.com/en/1.1.x/tutorial/
+
+• https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+
+• https://realpython.com/flask-blueprint/
+
+• https://getbootstrap.com/
 
 # Media
 
