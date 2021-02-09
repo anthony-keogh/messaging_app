@@ -16,7 +16,9 @@ Flask is a micro web framework written in Python. It is classified as a microfra
 
 
 # Wireframes
+Index page wireframe below for desktop
 
+![Optional Text](../master/app/static/img/theadvicebox-screenshot.PNG)
 
 # Features
 
