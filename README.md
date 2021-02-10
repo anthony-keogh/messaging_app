@@ -7,9 +7,9 @@ http://www.theadvicebox.com/
 
 # User Stories
 
-Successful   ![Optional Text](../master/static/img/green-correct.png)
+Successful  ![Optional Text](../master/app/static/img/green-correct.png)
 
-Not Successful    ![Optional Text](../master/static/img/red-error.png)
+Not Successful    ![Optional Text](../master/app/static/img/red-error.png)
 
 
 
