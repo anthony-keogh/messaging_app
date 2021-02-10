@@ -13,29 +13,29 @@ Not Successful    ![Optional Text](../master/static/img/red-error.png)
 
 
 
-• The software application should load fast  ![Optional Text](../master/static/img/green-correct.png)
+• The software application should load fast  ![Optional Text](../master/app/static/img/green-correct.png)
 
-• View all the clothes on the app   ![Optional Text](../master/static/img/green-correct.png)
+• View all the channels on the app   ![Optional Text](../master/app/static/img/green-correct.png)
 
-• Click on any product and be directed to a page with more description about that specific product   ![Optional Text](../master/static/img/green-correct.png)
+• View all the messages on the channels   ![Optional Text](../master/app/static/img/green-correct.png)
 
-• Click on the "Buy Now" button and be directed to the payment methods such as Stripe   ![Optional Text](../master/static/img/green-correct.png)
+• Be able to create a channel    ![Optional Text](../master/app/static/img/green-correct.png)
 
-• Click on the "Cart" button and be directed to the cart page with my information   ![Optional Text](../master/static/img/green-correct.png)
+• Be able to create a message   ![Optional Text](../master/app/static/img/green-correct.png)
 
-• Click on the "Loved Product" button and be directed to the "Loved Product" page with my information   ![Optional Text](../master/static/img/green-correct.png)
+• Click on any message and be directed to a page with more description about that specific message   ![Optional Text](../master/app/static/img/green-correct.png)
 
-• Press the sign up button and be shown the sign up page   ![Optional Text](../master/static/img/green-correct.png)
+• Press the sign up button and be shown the sign up page   ![Optional Text](../master/app/static/img/green-correct.png)
 
-• The sign up form to work correctly   ![Optional Text](../master/static/img/green-correct.png)
+• The sign up form to work correctly   ![Optional Text](../master/app/static/img/green-correct.png)
 
-• Press the login button and be shown the login page and shown information about my account   ![Optional Text](../master/static/img/green-correct.png)
+• Press the login button and be shown the login page and shown information about my account   ![Optional Text](../master/app/static/img/green-correct.png)
 
-• The login form to work correctly   ![Optional Text](../master/static/img/green-correct.png)
+• The login form to work correctly   ![Optional Text](../master/app/static/img/green-correct.png)
 
-• Shopping application to work on all browsers   ![Optional Text](../master/static/img/green-correct.png)
+• Messaging application to work on all browsers   ![Optional Text](../master/app/static/img/green-correct.png)
 
-• Shopping application to should be user friendly on smartphone
+• Messaging application to should be user friendly on smartphone    ![Optional Text](../master/app/static/img/green-correct.png)
 
 # Design
 
