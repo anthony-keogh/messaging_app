@@ -41,6 +41,33 @@ Not Successful    ![Optional Text](../master/app/static/img/red-error.png)
 
 # Data Architecture
 
+    Data Architecture Characteristics
+ 
+      • User Driven
+   
+      • Built on shared data
+   
+      • Automated
+   
+      • Driven by AI
+   
+      • Elastic
+   
+      • Simple
+   
+      • Secure
+   
+   
+    Define Data Vision
+  
+    Define Data Architecture
+  
+    Define Structure
+  
+    Define Data Flows
+    
+    
+    
 # Data Modeling
 
     Object Model Design
