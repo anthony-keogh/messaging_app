@@ -83,7 +83,7 @@ Not Successful    ![Optional Text](../master/app/static/img/red-error.png)
 # Wireframes
 Index page wireframe below for desktop
 
-![Optional Text](../master/app/static/img/theadvicebox-wireframe.PNG)
+
 
 # Features
 
