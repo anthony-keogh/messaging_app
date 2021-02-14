@@ -170,11 +170,14 @@ div.ex1 {
                         </p>
             <br>
             <div class="input-group mb-3">
+            <form action="{{ url_for('messages_blueprint.adding_messages') }}" method="POST">
   <div class="input-group-prepend">
-    <button class="btn btn-outline-secondary" style="font-weight:bold; color:blue;" type="button">Comment</button>
+    <button type="submit" style="font-weight:bold; color:blue;" class="submit-button">Comment</button>
   </div>
   
-  <input type="text" class="form-control" placeholder="leave a comment {{session.username}}" aria-label="Write a comment" aria-describedby="basic-addon1">
+  <input type="text" name="summary" class="form-control" placeholder="leave a comment {{session.username}}" required>
+ 
+ </form>
 <br><br>
 
 </div>
