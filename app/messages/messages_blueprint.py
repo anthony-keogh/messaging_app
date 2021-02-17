@@ -75,7 +75,8 @@ def adding_messages():
                         'username': request.form.get('selectpicker')
                         
    })
-    return redirect(url_for('messages'))
+    return render_template("messages.html")
+    #return redirect(url_for('messages'))
 
 # ----------------- Edit message Data ------------------ #
 
