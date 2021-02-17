@@ -8,7 +8,7 @@ import os
 from datetime import datetime
 import json
 import string
-
+from app import mongo
 from flask import jsonify
 from flask import session
 
@@ -59,6 +59,8 @@ def team():
 
 @pages_blueprint.route('/profile')
 def profile():
+    channel_Name= mongo.db.channel.find()
+    users = mongo.db.users.find()
     
-    return render_template('profile.html')
+    return render_template('profile.html',  users=users, channel_Name=channel_Name)
 

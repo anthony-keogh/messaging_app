@@ -40,14 +40,17 @@ def channels():
   return render_template('channels.html' , channel_Name=channel_Name   )  
 
 
-@channels_blueprint.route('/channel/<channel_id>')
+@channels_blueprint.route('/channel/<channel_id>', methods=['GET'])
 def view_channel(channel_id):
     channel_Name = mongo.db.channel.find()
-    channel = mongo.db.channel.find_one( {"_id": ObjectId(channel_id)})
-    messages_All = mongo.db.message.find()
+    channel = mongo.db.channel.find_one( {"_id": ObjectId(channel_id)})["channel_Name"]
+    messages_All = mongo.db.message.find({"channel_Name":channel})
+    print(channel)
+
+
+
    
     return render_template('channel.html', channel=channel, messages_All=messages_All, channel_Name=channel_Name )
-
 
 
 

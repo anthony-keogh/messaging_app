@@ -35,9 +35,9 @@ def view_message(message_id):
 
 @messages_blueprint.route('/messages', methods=['GET'])
 def messages():
-  messages_All = mongo.db.message.find()
-  channel_Name = mongo.db.channel.find()
-  return render_template('messages.html', messages_All=messages_All, channel_Name=channel_Name)
+    messages_All = mongo.db.message.find()
+    channel_Name = mongo.db.channel.find()
+    return render_template('messages.html', messages_All=messages_All, channel_Name=channel_Name)
 
 
 
@@ -49,10 +49,11 @@ def messages():
 def add_message():
     message_Add = mongo.db.message.find()
     channel_Name= mongo.db.channel.find()
-    all_channel = mongo.db.channel                                                                                     #find channel 
+     
+    users = mongo.db.users.find()                                                                                   #find channel 
 
       #gaining access to mongodb atlas database and able to find items inside the collection
-    return render_template("add_message.html",  message_Add=message_Add, channel_Name=channel_Name)
+    return render_template("add_message.html",  message_Add=message_Add, channel_Name=channel_Name, users=users)
 
 @messages_blueprint.route('/adding_message/', methods=['GET', 'POST'])
 def adding_messages():
@@ -70,12 +71,11 @@ def adding_messages():
                         'summary': request.form.get('summary'),
                         'username': request.form.get('username'),
                         "date_added": today,
-                        'channel_Name': request.form.get('selectpicker')
-                        
+                        'channel_Name': request.form.get('selectpicker'),
+                        'username': request.form.get('selectpicker')
                         
    })
     return redirect(url_for('messages'))
-
 
 # ----------------- Edit message Data ------------------ #
 

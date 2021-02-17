@@ -15,7 +15,7 @@
 
 <body style="background-color:black;">
 
-<div class="container-fluid">
+<div class="container-fluid" style="z-index:-1;">
   <div class="row content">
     <div class="col-sm-3 sidenav hidden-xs">
       <h2 style="color:black;">Your Profile</h2>
@@ -37,25 +37,32 @@
         <div class="col-sm-3">
           <div class="well well-padding">
             <h4 class="white-text">Users</h4>
-            <p class="yellow-text">1 Million</p> 
+            {% for users_list in users %}
+                         <p class="yellow-text">{{users_list.username}}</p> 
+                           
+            {% endfor %} 
           </div>
         </div>
         <div class="col-sm-3">
           <div class="well well-padding">
-            <h4 class="white-text">Pages</h4>
-            <p class="yellow-text">100 Million</p> 
+            <h4 class="white-text">Channels</h4>
+            {% for channel_Name_list in channel_Name %}
+                         <p class="yellow-text">{{channel_Name_list.channel_Name}}</p> 
+                           
+            {% endfor %}
+            
           </div>
         </div>
         <div class="col-sm-3">
           <div class="well well-padding">
-            <h4 class="white-text">Sessions</h4>
-            <p class="yellow-text">10 Million</p> 
+            <h4 class="white-text">Goals for 2021</h4>
+            <p class="yellow-text"></p> 
           </div>
         </div>
         <div class="col-sm-3">
           <div class="well well-padding">
-            <h4 class="white-text">Bounce</h4>
-            <p class="yellow-text">30%</p> 
+            <h4 class="white-text">Books you like</h4>
+            <p class="yellow-text"></p> 
           </div>
         </div>
       </div>
