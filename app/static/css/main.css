@@ -335,6 +335,10 @@ p.white-text{
 .col-sm-7.mobile-margin{
         margin-top: 40px;
         }
+
+div.channel-space{
+    margin-left: 710px!important;
+}
 div.hide-in-smallscreen{
     visibility: hidden;
 }
