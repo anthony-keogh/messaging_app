@@ -72,7 +72,7 @@ Not Successful    ![Optional Text](../master/app/static/img/red-error.png)
 
     Object Model Design
     
-![Optional Text](..master/app/static/img/mongodb-logo1.jpg)
+![Optional Text](../master/app/static/img/mongodb-logo1.jpg)
     
 Schema Design:
 
