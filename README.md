@@ -72,6 +72,8 @@ Not Successful    ![Optional Text](../master/app/static/img/red-error.png)
 
     Object Model Design
     
+![Optional Text](..master/app/static/img/mongodb-logo1.jpg)
+    
 Schema Design:
 
 Collections with the MongoDB Database: (Collection Name: test)
