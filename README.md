@@ -71,7 +71,47 @@ Not Successful    ![Optional Text](../master/app/static/img/red-error.png)
 # Data Modeling
 
     Object Model Design
+    
+Schema Design:
 
+Collections with the MongoDB Database: (Collection Name: test)
+
+   
+   Channel
+   
+    • _id: <ObjectId>
+    
+    • channel_Name:  string
+    
+    • channel_Description:  string
+    
+    • username_channel:  string
+    
+   Message
+   
+    • _id: <ObjectId>
+    
+    • message_Description:  string
+    
+    • summary:  string
+    
+    • username:  string
+    
+    • date_added:  string
+    
+    • channel_Name:  string
+    
+   Users
+   
+    • _id: <ObjectId>
+    
+    • username:  string
+    
+    • useremail:  string
+    
+    • userpassword:  string
+    
+     
 
 # Design
 
