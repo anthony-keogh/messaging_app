@@ -74,7 +74,7 @@ Not Successful    ![Optional Text](../master/app/static/img/red-error.png)
     
 ![Optional Text](../master/app/static/img/mongodb-logo1.jpg)
     
-Schema Design:
+# Schema Design:
 
 Collections with the MongoDB Database: (Collection Name: test)
 
