@@ -4,10 +4,7 @@ http://www.theadvicebox.com/
 
 # Gathering
 
-# UX
-
-
-# User Stories
+# UX: User Stories
 
 Successful  ![Optional Text](../master/app/static/img/green-correct.png)
 
@@ -43,28 +40,19 @@ Not Successful    ![Optional Text](../master/app/static/img/red-error.png)
 
     Data Architecture Characteristics
  
-      • User Driven
+  User Driven  ![Optional Text](../master/app/static/img/green-correct.png)
    
-      • Built on shared data
+  Built on shared data   ![Optional Text](../master/app/static/img/green-correct.png)
    
-      • Automated
+  Automated   ![Optional Text](../master/app/static/img/red-error.png)
    
-      • Driven by AI
+  Driven by AI   ![Optional Text](../master/app/static/img/red-error.png)
    
-      • Elastic
+  Elastic   ![Optional Text](../master/app/static/img/red-error.png)
    
-      • Simple
+  Simple   ![Optional Text](../master/app/static/img/green-correct.png)
    
-      • Secure
-   
-   
-    Define Data Vision
-  
-    Define Data Architecture
-  
-    Define Structure
-  
-    Define Data Flows
+  Secure   ![Optional Text](../master/app/static/img/green-correct.png)
     
     
     
@@ -129,7 +117,23 @@ Index page wireframe below for desktop
 
 # Features
 
+Create Channel
 
+Create Message
+
+Register Account
+
+Login Account
+
+View Account
+
+View Messages
+
+View Single Messgae
+
+View Channels
+
+View Single Channel
 
 # Technologies Used
 
@@ -237,3 +241,15 @@ https://github.com/anthony-keogh/messaging_app/blob/master/app/static/img/Valida
 # Media
 
 # Acknowledgements
+
+https://www.w3schools.com/
+
+https://flask.palletsprojects.com/en/1.1.x/
+
+https://realpython.com/tutorials/flask/
+
+https://www.w3schools.com/css/css3_gradients.asp
+
+https://cssgradient.io/
+
+https://getbootstrap.com/docs/3.3/css/
