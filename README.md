@@ -113,7 +113,7 @@ Collections with the MongoDB Database: (Collection Name: test)
 # Wireframes
 Index page wireframe below for desktop
 
-
+![Optional Text](../master/app/static/img/theadvicebox-wireframe.PNG)
 
 # Features
 
