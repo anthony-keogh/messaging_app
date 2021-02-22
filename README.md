@@ -117,23 +117,23 @@ Index page wireframe below for desktop
 
 # Features
 
-Create Channel
+     • Create Channel
 
-Create Message
+     • Create Message
 
-Register Account
+     • Register Account
 
-Login Account
+     • Login Account
 
-View Account
+     • View Account
 
-View Messages
+     • View Messages
 
-View Single Messgae
+     • View Single Messgae
 
-View Channels
+     • View Channels
 
-View Single Channel
+     • View Single Channel
 
 # Technologies Used
 
