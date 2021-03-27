@@ -18,15 +18,15 @@ class ProductionConfig(Config):
     
 
 class DevelopmentConfig(Config):
-    DEBUG = True
+    DEBUG = False
     MONGO_DBNAME = app.config["MONGO_DBNAME"] = os.environ.get('MONGO_DBNAME')
     MONGO_URI = app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
     SECRET_KEY = os.getenv("SECRET_KEY")
     
     DATABASE_URI = os.environ.get('MONGO_URI')
-    TESTING = True
+    TESTING = False
    
     #app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 class TestingConfig(Config):
-    TESTING = True
+    TESTING = False
