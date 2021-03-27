@@ -44,6 +44,8 @@
                         </select>
                         <br><br>
                         <div >
+                        <label>What user do you want to post your message to?</label>
+                        <br>
                         <select name="selectpicker">
                         {% for user_list in users %}
                            <option value="{{user_list.username}}">{{user_list.username}}</option>

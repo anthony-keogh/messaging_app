@@ -171,6 +171,8 @@ div.ex1 {
           <p style=" color:white;font-size:15px;">{{ messages.message_Description }}
                         </p>
             <br>
+            <p style=" color:gold;font-size:15px;"># To {{ messages.username-to-message }}
+            </p>
             <div class="input-group mb-3">
   <div class="input-group-prepend">
     <a href="{{ url_for('messages_blueprint.add_message') }}"><button class="btn btn-outline-secondary" style="font-weight:bold; color:blue;" type="button">Start Messaging</button></a>
