@@ -72,7 +72,7 @@ def adding_messages():
                         'username': request.form.get('username'),
                         "date_added": today,
                         'channel_Name': request.form.get('selectpicker'),
-                        'username-to-message': request.form.get('selectpicker')
+                        # 'username-to-message': request.form.get('selectpicker')
                         
    })
     return render_template("index.html")
