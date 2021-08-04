@@ -122,25 +122,27 @@ div.ex1 {
          
 <div class="input-group" style="display : flex;
   align-items : center;
-  justify-content: center; width:90%; border-radius:30%;">
+  justify-content: center; width:90%;">
   <input style="margin-left:10%;" type="search" class="form-control rounded" placeholder="Explore Channels" aria-label="Search"
     aria-describedby="search-addon" />
   <button  type="button" class="btn btn-outline-primary" style="background-color:blue; color:white;">Search</button>
 </div>
 <br>
-
-   <div class="ex1" style="display : flex;
+<div class="ex1" style="display : flex;
   align-items : center;
-  justify-content: center; margin-top:400px; position:fixed;"><div class="channel-space"style="  margin-left:410px; background-color:white;"></div>
-       {% for channels in channel_Name %} 
+  justify-content: center; "><div style="  margin-left:410px; background-color:white;"></div>
+ {% for channels in channel_Name %} 
   
+  <div style=" padding:20px; margin:10px; background-color:black;box-shadow: 13px 5px 10px 0px rgba(91,126,253,0.75);
+-webkit-box-shadow: 13px 5px 10px 0px rgba(91,126,253,0.75);
+-moz-box-shadow: 13px 5px 10px 0px rgba(91,126,253,0.75);">
 
 <a href="{{ url_for('channels_blueprint .view_channel', channel_id=channels._id) }}" style="color:white;
 "><div style="color:white;">{{channels.channel_Name}}</div></a>
-
+</div>
   <br>
-       {% endfor %}
- </div>      
+  {% endfor %}
+ </div>     
 
               
             </div>
