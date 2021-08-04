@@ -14,4 +14,6 @@ def create_app(config):
     app.config.from_object('app.config.DevelopmentConfig')
     mongo.init_app(app)
     
+    
+    
     return app

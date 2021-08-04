@@ -18,6 +18,8 @@ from flask import Blueprint
 from app import create_app, mongo
 
 
+
+
 app = create_app(Config)
 #app = Flask(__name__)
 
