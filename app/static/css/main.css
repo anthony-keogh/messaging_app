@@ -332,6 +332,9 @@ p.white-text{
     color:white;
 }
 @media only screen and (max-width: 500px) {
+button.navbar-toggle.extra-nav-btn{
+    visibility: hidden;
+}
 .col-sm-7.mobile-margin{
         margin-top: 40px;
         }
