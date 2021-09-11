@@ -100,9 +100,23 @@
       <div class="row">
         <div class="col-sm-4">
           <div class="well">
-            <p>Text</p> 
-            <p>Text</p> 
-            <p>Text</p> 
+            {% for messages in messages_All %}
+       
+       
+           <p style="color:yellow;">Sent by <br><span style=" color:white;font-size:20px;">{{ messages.username }}</span></p>
+                    </p>
+           
+          
+        
+          <a href="{{ url_for('messages_blueprint.view_message', message_id=messages._id) }}" style="color:orange;">View Full Message</a>
+          <p style="color:white;">Date: <span style=" color:yellow;font-size:15px;"><i>{{ messages.date_added }}</i></span></p>
+                        </p><br>
+          <p style=" color:white;font-size:15px;">{{ messages.message_Description }}
+                        </p>
+           
+        
+        
+         {% endfor %}
           </div>
         </div>
         <div class="col-sm-4">
@@ -138,3 +152,6 @@
 <div style="height:100px"></div>	
 </body>
 {% endblock %}
+
+
+
