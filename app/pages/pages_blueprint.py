@@ -57,11 +57,4 @@ def team():
 
 
 
-@pages_blueprint.route('/profile')
-def profile():
-    channel_Name= mongo.db.channel.find()
-    users = mongo.db.users.find()
-    messages_All = mongo.db.message.find()
-    
-    return render_template('profile.html',  users=users, channel_Name=channel_Name, messages_All=messages_All)
 
