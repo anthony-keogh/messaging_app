@@ -26,7 +26,6 @@ app = create_app(Config)
 if os.path.isfile('env.py'):
     import env
 
-app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 app.register_blueprint(users_blueprint)
 app.register_blueprint(pages_blueprint)
